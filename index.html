@@ -4,8 +4,141 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Document</title>
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     </head>
     <body>
-        <main></main>
+        <header class="header">
+            <a class="header__logo" href="#"></a>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li><a href="#about">О комплексе</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#property">Выбор недвижимости</a></li>
+                    <li><a href="#finishing">Отделка</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a class="header__phone" href="tel:+79991234567">+7 (495) 489-79-24</a>
+                <button class="header__favourites" aria-label="Избранное">
+                    <img src="assets/images/favourites.svg" alt="Избранное" />
+                </button>
+                <button class="btn btn--primary header__choose">Выбрать апартаменты</button>
+            </div>
+        </header>
+        <main>
+            <section class="main__promo">
+                <div class="main__promo-overlay"></div>
+                <div class="main__promo-description">
+                    <div class="main__promo-badges">
+                        <div class="main__promo-badge">
+                            <span class="main__promo-badge-dot"></span>
+                            Электрозаводская
+                            <div class="main__promo-badge-img">
+                                <img src="assets/images/walking-man.svg" alt="Пешком" />
+                            </div>
+                            8 мин
+                        </div>
+                        <div class="main__promo-badge">Район ЦАО</div>
+                    </div>
+                    <div class="main__promo-text">Готовые апартаменты бизнес-класса от 12,8 млн ₽</div>
+                    <div class="main__promo-subtitle">Доходные дома для жизни и инвестиций</div>
+                    <div class="main__promo-actions">
+                        <button class="btn btn--primary main__promo-btn">Выбрать апартаменты</button>
+                        <a href="#about" class="main__promo-link">О проекте</a>
+                    </div>
+                </div>
+                <div class="main__promo-info">
+                    <div class="main__promo-info-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="main__promo-info-item">
+                                    <div class="main__promo-info-badge">24 этаж</div>
+                                    <div class="main__promo-info-text">АПАРТАМЕНТЫ В ЦАО С ВИДОМ НА ЯУЗУ</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__promo-info-item">
+                                    <div class="main__promo-info-badge">от 12,8 млн</div>
+                                    <div class="main__promo-info-text">квартиры бизнес-класс с высокой доходностью</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__promo-info-item">
+                                    <div class="main__promo-info-badge">от 29 м²</div>
+                                    <div class="main__promo-info-text">доходные дома для жизни и инвестиций</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main__promo-info-pagination swiper-pagination"></div>
+                </div>
+            </section>
+            <section class="main__about">
+                <div class="main__about-content">
+                    <div class="main__about-title">Готовые апартаменты с видом на доход</div>
+                    <div class="main__about-description">
+                        В квартале продумано всё: от благоустройства общественных зон и дизайнерских интерьеров холлов
+                        до просторных видовых апартаментов со свободными планировками и высокими потолками.
+                    </div>
+                </div>
+                <div class="main__about-swiper-wrapper">
+                    <div class="main__about-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="main__about-slide-item main__about-slide-item--architecture">
+                                    <div class="main__about-slide-item--overlay"></div>
+                                    <div class="main__about-slide-text">АРХИТЕКТУРНЫЕ РЕШЕНИЯ</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__about-slide-item main__about-slide-item--parking">
+                                    <div class="main__about-slide-item--overlay"></div>
+                                    <div class="main__about-slide-text">Паркинг и кладовые</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__about-slide-item main__about-slide-item--lobby">
+                                    <div class="main__about-slide-item--overlay"></div>
+                                    <div class="main__about-slide-text">ДИЗАЙНЕРСКИЙ ЛОББИ</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__about-slide-item main__about-slide-item--lobby">
+                                    <div class="main__about-slide-item--overlay"></div>
+                                    <div class="main__about-slide-text">ДИЗАЙНЕРСКИЙ ЛОББИ</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__about-slide-item main__about-slide-item--lobby">
+                                    <div class="main__about-slide-item--overlay"></div>
+                                    <div class="main__about-slide-text">ДИЗАЙНЕРСКИЙ ЛОББИ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main__about-button-prev">
+                        <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.9996 16.25L4.43715 16.25L16.2496 28.0625L14.7646 29.75L0.139649 15.125L14.7646 0.5L16.2496 2.1875L4.43715 14L31.9996 14L31.9996 16.25Z"
+                                fill="#636466"
+                            />
+                        </svg>
+                    </div>
+                    <div class="main__about-button-next">
+                        <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.000349611 13.75L27.5629 13.75L15.7504 1.9375L17.2354 0.250002L31.8604 14.875L17.2353 29.5L15.7503 27.8125L27.5629 16L0.000349387 16L0.000349611 13.75Z"
+                                fill="#636466"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer"></footer>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>

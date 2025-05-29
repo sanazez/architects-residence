@@ -629,6 +629,139 @@ main {
     font-weight: 600;
     display: none;
 }
+.main__profit-calc {
+    margin-top: 130px;
+}
+.main__profit-calc-title {
+    font-size: 53px;
+    font-family: 'TenorSans', sans-serif;
+    text-transform: uppercase;
+}
+.main__profit-calc-content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    margin-top: 64px;
+}
+.main__profit-calc-form,
+.main__profit-calc-result {
+    min-width: 320px;
+    padding: 60px 94px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: calc((100% - 30px) / 2);
+    border-radius: 36px;
+    border: 1px solid #560300;
+}
+
+.main__profit-calc-slider label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #2f2e2e;
+}
+.main__profit-calc-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+.main__profit-calc-value {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    font-size: 30px;
+    font-family: 'TenorSans', sans-serif;
+    color: #560300;
+}
+.custom-slider {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-slider__track {
+    width: 100%;
+    height: 4px;
+    background: #aeaeae;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-slider__track-filled {
+    height: 4px;
+    background: #560300;
+    border-radius: 2px;
+    width: 0;
+}
+
+.custom-slider__thumb {
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 1px solid #560300;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    z-index: 2;
+}
+
+.custom-slider__thumb:active {
+    cursor: grabbing;
+}
+
+.main__profit-calc-slider input[type='range'] {
+    display: none;
+}
+
+.main__profit-calc-btn {
+    padding: 12px 24px;
+    background: #560300;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main__profit-calc-result-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+}
+.main__profit-calc-result-row:last-child {
+    border-bottom: none;
+}
+.main__profit-calc-result-value {
+    font-size: 53px;
+    font-family: 'TenorSans', sans-serif;
+    color: var(--button-secondary-default-text);
+}
+.main__profit-calc-result-label {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: #686868;
+    margin-bottom: 12px;
+}
+.main__profit-calc-result-note {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    font-size: 16px;
+    color: #999892;
+    width: 168px;
+}
 @media (max-width: 1919px) {
     body {
         padding: 36px 36px;
@@ -661,6 +794,19 @@ main {
     }
     .main__about-swiper-wrapper {
         width: calc(100vw - 346px);
+    }
+    .main__profit-calc-title {
+        font-size: 44px;
+    }
+    .main__profit-calc-result,
+    .main__profit-calc-form {
+        padding: 30px 54px;
+    }
+    .main__profit-calc-result-value {
+        font-size: 38px;
+    }
+    .main__profit-calc-result-label {
+        font-size: 20px;
     }
 }
 
@@ -703,7 +849,8 @@ main {
     .main__promo-badges {
         margin-bottom: 20px;
     }
-    .main__about {
+    .main__about,
+    .main__profit-calc {
         margin-top: 80px;
     }
     .main__about-title {
@@ -808,6 +955,16 @@ main {
         color: #2f2e2e;
         background-color: #f9f4f4;
     }
+    .main__profit-calc-value {
+        font-size: 22px;
+        top: 0;
+    }
+    .main__profit-calc-slider label {
+        font-size: 14px;
+    }
+    .main__profit-calc-title {
+        font-size: 34px;
+    }
 }
 
 @media (max-width: 1279px) {
@@ -830,6 +987,23 @@ main {
     }
     .main__about-button-next {
         right: -84px;
+    }
+    .main__profit-calc-result,
+    .main__profit-calc-form {
+        padding: 30px 30px;
+    }
+    .main__profit-calc-result-value {
+        font-size: 32px;
+    }
+    .main__profit-calc-result-label {
+        font-size: 18px;
+    }
+    .main__profit-calc-result-note {
+        font-size: 14px;
+        width: 138px;
+    }
+    .main__profit-calc-title {
+        font-size: 28px;
     }
 }
 
@@ -877,6 +1051,9 @@ main {
     .main__about-swiper-wrapper {
         width: calc(100vw - 270px);
     }
+    .main__profit-calc-content {
+        margin-top: 32px;
+    }
 }
 
 @media (max-width: 967px) {
@@ -889,6 +1066,10 @@ main {
     .main__about-title {
         max-width: max-content;
         width: 100%;
+        font-size: 24px;
+    }
+    .main__profit-calc-title {
+        font-size: 24px;
     }
     .main__about-description {
         max-width: max-content;
@@ -902,6 +1083,17 @@ main {
     }
     .main__about-button-next {
         right: -94px;
+    }
+    .main__profit-calc-result-note {
+        position: static;
+        width: auto;
+    }
+    .main__profit-calc-value {
+        font-size: 18px;
+        top: 0;
+    }
+    .main__profit-calc-slider label {
+        font-size: 14px;
     }
 }
 
@@ -918,6 +1110,17 @@ main {
 @media (max-width: 847px) {
     .main__about-swiper-wrapper {
         width: calc(100vw - 440px);
+    }
+    .main__profit-calc-content {
+        flex-direction: column;
+        row-gap: 16px;
+    }
+    .main__profit-calc-form,
+    .main__profit-calc-result {
+        width: 100%;
+    }
+    .main__profit-calc-form {
+        gap: 12px;
     }
 }
 @media (max-width: 795px) {
@@ -952,6 +1155,17 @@ main {
     .main__about-swiper .swiper-slide {
         height: 395px;
     }
+    .main__profit-calc-value {
+        font-size: 14px;
+        top: 0;
+    }
+    .main__profit-calc-slider label {
+        font-size: 12px;
+    }
+    .main__profit-calc-result-label,
+    .main__profit-calc-result-note {
+        font-size: 12px;
+    }
 }
 @media (max-width: 526px) {
     .main__about-swiper-wrapper {
@@ -969,6 +1183,10 @@ main {
     }
     .header__burger {
         width: 26px;
+    }
+    .main__profit-calc-btn {
+        width: 100%;
+        font-size: 14px;
     }
 }
 @media (max-width: 711px) {

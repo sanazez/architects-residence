@@ -172,6 +172,80 @@
                     </div>
                 </div>
             </section>
+            <section class="main__profit-calc">
+                <div class="main__profit-calc-title">Расчет доходности<br />ваших будущих апартаментов</div>
+                <div class="main__profit-calc-content">
+                    <div class="main__profit-calc-form">
+                        <div class="main__profit-calc-slider">
+                            <label>Стоимость недвижимости</label>
+                            <span id="priceValue" class="main__profit-calc-value">12800000</span>
+                            <div class="custom-slider">
+                                <div class="custom-slider__track">
+                                    <div class="custom-slider__track-filled"></div>
+                                </div>
+                                <div class="custom-slider__thumb"></div>
+                                <input
+                                    type="range"
+                                    min="5000000"
+                                    max="50000000"
+                                    step="100000"
+                                    value="12800000"
+                                    id="priceRange"
+                                    hidden
+                                />
+                            </div>
+                        </div>
+                        <div class="main__profit-calc-slider">
+                            <label>Первый взнос</label>
+                            <span id="downPaymentValue" class="main__profit-calc-value">3000000</span>
+                            <div class="custom-slider">
+                                <div class="custom-slider__track">
+                                    <div class="custom-slider__track-filled"></div>
+                                </div>
+                                <div class="custom-slider__thumb"></div>
+                                <input
+                                    type="range"
+                                    min="500000"
+                                    max="20000000"
+                                    step="100000"
+                                    value="3000000"
+                                    id="downPaymentRange"
+                                    hidden
+                                />
+                            </div>
+                        </div>
+                        <div class="main__profit-calc-slider">
+                            <label>Срок владения (лет)</label>
+                            <span id="yearsValue" class="main__profit-calc-value">5</span>
+                            <div class="custom-slider">
+                                <div class="custom-slider__track">
+                                    <div class="custom-slider__track-filled"></div>
+                                </div>
+                                <div class="custom-slider__thumb"></div>
+                                <input type="range" min="1" max="30" step="1" value="5" id="yearsRange" hidden />
+                            </div>
+                        </div>
+                        <div class="main__profit-calc-btn-wrapper">
+                            <button class="main__profit-calc-btn">Рассчитать доходность</button>
+                        </div>
+                    </div>
+                    <div class="main__profit-calc-result">
+                        <div class="main__profit-calc-result-row">
+                            <div class="main__profit-calc-result-label">Доход от аренды</div>
+                            <div id="rentIncome" class="main__profit-calc-result-value">~ 95 000 ₽/мес</div>
+                            <div class="main__profit-calc-result-note">* При средней стоимости аренды</div>
+                        </div>
+                        <div class="main__profit-calc-result-row">
+                            <div class="main__profit-calc-result-label">Окупаемость вложений</div>
+                            <div id="roi" class="main__profit-calc-result-value">~ 9,2 года</div>
+                        </div>
+                        <div class="main__profit-calc-result-row">
+                            <div class="main__profit-calc-result-label">Рост стоимости объекта</div>
+                            <div id="priceGrowth" class="main__profit-calc-result-value">~ 140% +</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="footer"></footer>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

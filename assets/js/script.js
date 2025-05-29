@@ -42,6 +42,24 @@ const initSliders = () => {
             320: { slidesPerView: 1 },
         },
     });
+    new Swiper('.main__gallery-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.main__gallery-pagination-btn--next',
+            prevEl: '.main__gallery-pagination-btn--prev',
+        },
+        pagination: {
+            el: '.main__gallery-pagination-dots',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+        },
+        breakpoints: {
+            1024: { slidesPerView: 2 },
+        },
+    });
 };
 
 const initMobileMenu = () => {
@@ -94,7 +112,7 @@ class CustomSlider {
         this.input.value = value;
 
         this.valueSpan.textContent =
-            this.input.id === 'yearsRange' ? `${value}` : `${Number(value).toLocaleString('ru-RU')} ₽`;
+            this.input.id === 'yearsRange' ? `${value} лет` : `${Number(value).toLocaleString('ru-RU')}`;
     }
 
     handleTrackClick(e) {

@@ -778,11 +778,6 @@ main {
 .main__gallery-filters {
     display: flex;
     gap: 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    width: 100%;
-    max-width: 100%;
 }
 .main__gallery-filters::-webkit-scrollbar {
     display: none;
@@ -1281,6 +1276,13 @@ main {
     }
     .main__gallery-slider .swiper-slide {
         height: 448px;
+    }
+    .main__gallery-filters {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        width: 100%;
+        max-width: 100%;
     }
 }
 

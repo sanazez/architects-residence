@@ -675,13 +675,13 @@ main {
         display: block;
         position: absolute;
         bottom: 104px;
-        left: 20px;
+        left: 10px;
     }
     .header__mobile-office {
         display: block;
         position: absolute;
         bottom: 174px;
-        left: 20px;
+        left: 10px;
     }
     .main__promo {
         background-size: cover;
@@ -740,7 +740,7 @@ main {
         height: 100%;
         background: #560300;
         flex-direction: column;
-        padding: 80px 20px 20px;
+        padding: 100px 10px 10px;
         box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
         z-index: 999;
@@ -762,7 +762,7 @@ main {
         display: block;
         position: absolute;
         top: 20px;
-        left: 20px;
+        left: 10px;
         z-index: 1001;
     }
     .header__mobile-menu.active .header__signup-btn {
@@ -776,7 +776,7 @@ main {
         cursor: pointer;
         position: absolute;
         bottom: 20px;
-        left: 20px;
+        left: 10px;
         z-index: 1001;
         border-radius: 36px;
     }

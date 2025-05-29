@@ -665,6 +665,9 @@ main {
 }
 
 @media (max-width: 1447px) {
+    .main__promo {
+        margin-top: 62px;
+    }
     .header__phone-mobile {
         display: block;
         position: absolute;
@@ -918,11 +921,22 @@ main {
     }
 }
 @media (max-width: 795px) {
+    header {
+        padding: 0;
+    }
+    .main__promo {
+        margin-top: 32px;
+    }
     .main__about-swiper-wrapper {
         width: calc(100vw - 380px);
     }
-    .header__actions {
+    .header__favourites,
+    .header__phone {
         display: none;
+    }
+    .header__logo svg {
+        width: 127px;
+        height: 27px;
     }
 }
 
@@ -949,6 +963,12 @@ main {
     }
     .main__about-pagination {
         display: block;
+    }
+    .header__choose {
+        font-size: 12px;
+    }
+    .header__burger {
+        width: 26px;
     }
 }
 @media (max-width: 711px) {

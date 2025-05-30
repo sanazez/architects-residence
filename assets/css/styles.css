@@ -375,6 +375,7 @@ main {
     font-family: 'Montserrat', sans-serif;
     z-index: 2;
     padding-right: 16px;
+    font-weight: 300;
 }
 .main__promo-link {
     text-decoration: none;
@@ -472,7 +473,7 @@ main {
 .main__about-button-prev,
 .main__about-button-next {
     position: absolute;
-    top: 50%;
+    top: 42%;
     z-index: 10;
     width: 110px;
     height: 110px;
@@ -542,10 +543,13 @@ main {
     max-width: 788px;
 }
 .main__about-description {
-    max-width: 600px;
+    max-width: 560px;
     color: var(--button-secondary-default-text);
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    line-height: 100%;
 }
 .main__about-dot {
     background-color: #cac9c1;
@@ -633,7 +637,7 @@ main {
     display: none;
 }
 .main__profit-calc {
-    margin-top: 130px;
+    margin-top: 156px;
 }
 .main__profit-calc-title,
 .main__gallery-title {
@@ -650,7 +654,7 @@ main {
 .main__profit-calc-form,
 .main__profit-calc-result {
     min-width: 320px;
-    padding: 60px 94px;
+    padding: 80px 94px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -658,7 +662,13 @@ main {
     border-radius: 36px;
     border: 1px solid #560300;
 }
-
+.main__profit-calc-result {
+    padding: 50px 77px;
+    gap: 0;
+}
+.main__profit-calc-result .main__profit-calc-result-row {
+    margin-bottom: 40px;
+}
 .main__profit-calc-slider label {
     display: block;
     font-size: 18px;
@@ -767,7 +777,7 @@ main {
     width: 168px;
 }
 .main__gallery {
-    margin-top: 64px;
+    margin-top: 136px;
     margin-bottom: 64px;
 }
 
@@ -775,23 +785,24 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 68px;
 }
 
 .main__gallery-filters {
     display: flex;
-    gap: 16px;
+    gap: 8px;
 }
 .main__gallery-filters::-webkit-scrollbar {
     display: none;
 }
 .main__gallery-filter-btn {
-    padding: 8px 28px;
+    width: 198px;
+    height: 48px;
     border: 1px solid #686868;
     background: none;
     color: #686868;
     border-radius: 24px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     cursor: pointer;
@@ -831,7 +842,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 24px;
-    margin-top: 12px;
+    margin-top: 40px;
 }
 
 .main__gallery-pagination-btn {
@@ -880,14 +891,14 @@ main {
     transform: rotate(180deg);
 }
 .main__property {
-    margin-top: 64px;
+    margin-top: 148px;
     margin-bottom: 64px;
 }
 .main__property-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 74px;
 }
 
 .custom-select {
@@ -978,7 +989,8 @@ main {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    column-gap: 24px;
+    row-gap: 44px;
 }
 
 .property-filter {
@@ -1001,7 +1013,8 @@ main {
 }
 
 .property-filter span {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'TenorSans', sans-serif;
+    font-weight: 400;
     font-size: 30px;
     color: #560300;
 }
@@ -1104,7 +1117,7 @@ main {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 114px;
     justify-content: space-between;
     width: 100%;
 }
@@ -1201,22 +1214,21 @@ main {
 .property-card__title {
     font-size: 30px;
     color: #080808;
-    margin-bottom: 16px;
+    margin-bottom: 52px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
 }
 
 .property-card__plan {
     width: 100%;
-    border-radius: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 50px;
     object-fit: cover;
 }
 
 .property-card__badges {
     display: flex;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     flex-wrap: wrap;
 }
 
@@ -1233,20 +1245,20 @@ main {
 .property-card__delivery {
     font-size: 15px;
     color: #560300;
-    font-weight: 500;
+    font-weight: 400;
 }
 .property-card__info-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 22px;
     justify-content: space-between;
 }
 
 .property-card__info-item {
     font-size: 15px;
     color: #090909;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .property-card__info-separator {
@@ -1258,13 +1270,14 @@ main {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 .property-card__plan-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 24px;
 }
 .property-card__price {
     font-size: 32px;
@@ -1276,7 +1289,7 @@ main {
 .property-card__discount-badge {
     background: #efe0cf;
     border-radius: 999px;
-    padding: 4px 20px;
+    padding: 8px 20px;
     font-size: 20px;
     color: #000000;
     font-weight: 500;
@@ -1300,7 +1313,7 @@ main {
 .property-card__choose-btn:hover {
     background: var(--button-primary-hover-bg);
 }
-@media (max-width: 1919px) {
+@media (max-width: 1899px) {
     body {
         padding: 36px 36px;
     }
@@ -1318,14 +1331,6 @@ main {
         font-size: 20px;
     }
 
-    .main__about-slide-text {
-        font-size: 30px;
-    }
-    .main__about-button-prev,
-    .main__about-button-next {
-        width: 70px;
-        height: 70px;
-    }
     .main__about-button-prev {
         left: -130px;
     }
@@ -1335,25 +1340,15 @@ main {
     .main__about-swiper-wrapper {
         width: calc(100vw - 346px);
     }
-    .main__profit-calc-result,
-    .main__profit-calc-form {
-        padding: 30px 54px;
-    }
     .main__profit-calc-result-value {
         font-size: 38px;
     }
     .main__profit-calc-result-label {
         font-size: 20px;
     }
-    .property-card__price {
-        font-size: 24px;
-    }
     .property-card__badge {
         padding: 6px 12px;
         font-size: 12px;
-    }
-    .property-card__title {
-        font-size: 22px;
     }
 }
 @media (max-width: 1563px) {
@@ -1426,8 +1421,8 @@ main {
     }
     .main__about-button-prev,
     .main__about-button-next {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
     .main__about-button-prev {
         left: -100px;

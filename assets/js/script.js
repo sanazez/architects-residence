@@ -217,7 +217,7 @@ class RangeSlider {
             return value;
         };
 
-        this.valueSpan.textContent = `${formatValue(minValue, this.slider.dataset.id)}–${formatValue(maxValue, this.slider.dataset.id)}`;
+        this.valueSpan.textContent = `${formatValue(minValue, this.slider.dataset.id)} - ${formatValue(maxValue, this.slider.dataset.id)}`;
     }
 
     handleTrackClick(e) {

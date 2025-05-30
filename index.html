@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Document</title>
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="stylesheet" href="assets/css/styles.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     </head>
@@ -112,7 +113,7 @@
             </section>
             <section class="main__about">
                 <div class="main__about-content">
-                    <div class="main__about-title">Готовые апартаменты с видом на доход</div>
+                    <div class="main__about-title title">Готовые апартаменты с видом на доход</div>
                     <div class="main__about-description">
                         В квартале продумано всё: от благоустройства общественных зон и дизайнерских интерьеров холлов
                         до просторных видовых апартаментов со свободными планировками и высокими потолками.
@@ -173,7 +174,7 @@
                 </div>
             </section>
             <section class="main__profit-calc">
-                <div class="main__profit-calc-title">Расчет доходности<br />ваших будущих апартаментов</div>
+                <div class="main__profit-calc-title title">Расчет доходности<br />ваших будущих апартаментов</div>
                 <div class="main__profit-calc-content">
                     <div class="main__profit-calc-form">
                         <div class="main__profit-calc-slider">
@@ -248,7 +249,7 @@
             </section>
             <section class="main__gallery">
                 <div class="main__gallery-header">
-                    <div class="main__gallery-title">Галерея</div>
+                    <div class="main__gallery-title title">Галерея</div>
                     <div class="main__gallery-filters">
                         <button class="main__gallery-filter-btn main__gallery-filter-btn--active">Все фото</button>
                         <button class="main__gallery-filter-btn">Архитектура</button>
@@ -300,6 +301,431 @@
                                 />
                             </svg>
                         </button>
+                    </div>
+                </div>
+            </section>
+            <section class="main__property">
+                <div class="main__property-header">
+                    <div class="main__property-title title">Подобрать апартаменты</div>
+                    <div class="main__property-select-row">
+                        <span class="property-number">№ ________</span>
+                        <div class="custom-select">
+                            <button class="custom-select__trigger" type="button">
+                                <span class="custom-select__value">По возрастанию цены</span>
+                                <svg
+                                    width="18"
+                                    height="10"
+                                    viewBox="0 0 18 10"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="custom-select__arrow"
+                                >
+                                    <path
+                                        d="M1.50228 0.9888L8.99927 8.2968L16.4963 0.988801C16.6302 0.857956 16.81 0.784703 16.9973 0.784703C17.1845 0.784703 17.3643 0.857957 17.4983 0.988801C17.5631 1.05235 17.6147 1.1282 17.6498 1.21191C17.685 1.29561 17.7031 1.3855 17.7031 1.4763C17.7031 1.5671 17.685 1.65699 17.6498 1.7407C17.6147 1.82441 17.5631 1.90025 17.4983 1.9638L9.52277 9.7398C9.38271 9.87632 9.19486 9.95273 8.99927 9.95273C8.80369 9.95273 8.61584 9.87632 8.47577 9.7398L0.500275 1.9653C0.434959 1.90171 0.383045 1.82567 0.347599 1.74168C0.312153 1.6577 0.29389 1.56746 0.29389 1.4763C0.29389 1.38514 0.312153 1.2949 0.347599 1.21091C0.383045 1.12693 0.434959 1.05089 0.500275 0.987299C0.634216 0.856454 0.814032 0.783202 1.00128 0.783202C1.18852 0.783202 1.36833 0.856455 1.50228 0.987299L1.50228 0.9888Z"
+                                        fill="black"
+                                    />
+                                </svg>
+                            </button>
+                            <ul class="custom-select__list">
+                                <li class="custom-select__option selected">По возрастанию цены</li>
+                                <li class="custom-select__option">По площади</li>
+                                <li class="custom-select__option">По максимальной скидке в рублях</li>
+                                <li class="custom-select__option">По убыванию цены</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__property-filters">
+                    <div class="main__property-filters-header">
+                        <div class="main__property-filters-title">Фильтр</div>
+                        <button class="filters-toggle" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="none">
+                                <path
+                                    fill="#000"
+                                    fill-rule="evenodd"
+                                    d="M17.25 4a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0M13.5 6.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5M4.75 14a3.75 3.75 0 1 0 7.5 0 3.75 3.75 0 0 0-7.5 0m3.75 2.25a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5"
+                                    clip-rule="evenodd"
+                                />
+                                <path
+                                    fill="#000"
+                                    d="M13.25 13.959a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75M8 3.209a.75.75 0 0 1 0 1.5H1a.75.75 0 0 1 0-1.5zM.25 13.959a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H1a.75.75 0 0 1-.75-.75M21 3.209a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="filters-container">
+                        <button class="filters-close" type="button">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18 6L6 18M6 6L18 18"
+                                    stroke="#560300"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+                        <div class="main__filters-left">
+                            <div class="property-filter">
+                                <div class="slider-header">
+                                    <label>Стоимость, млн</label>
+                                    <span id="costRangeValue">5.0–50.0</span>
+                                </div>
+                                <div class="range-slider" data-id="costRange">
+                                    <div class="range-slider__track">
+                                        <div class="range-slider__track-filled"></div>
+                                    </div>
+                                    <div class="range-slider__thumb range-slider__thumb--min"></div>
+                                    <div class="range-slider__thumb range-slider__thumb--max"></div>
+                                    <input
+                                        type="range"
+                                        min="5000000"
+                                        max="50000000"
+                                        step="100000"
+                                        value="5000000"
+                                        id="costMin"
+                                        hidden
+                                    />
+                                    <input
+                                        type="range"
+                                        min="5000000"
+                                        max="50000000"
+                                        step="100000"
+                                        value="50000000"
+                                        id="costMax"
+                                        hidden
+                                    />
+                                </div>
+                            </div>
+                            <div class="property-filter">
+                                <div class="slider-header">
+                                    <label>Цена, м² / тыс. ₽</label>
+                                    <span id="pricePerMeterRangeValue">100–500</span>
+                                </div>
+                                <div class="range-slider" data-id="pricePerMeterRange">
+                                    <div class="range-slider__track">
+                                        <div class="range-slider__track-filled"></div>
+                                    </div>
+                                    <div class="range-slider__thumb range-slider__thumb--min"></div>
+                                    <div class="range-slider__thumb range-slider__thumb--max"></div>
+                                    <input
+                                        type="range"
+                                        min="100000"
+                                        max="500000"
+                                        step="10000"
+                                        value="100000"
+                                        id="pricePerMeterMin"
+                                        hidden
+                                    />
+                                    <input
+                                        type="range"
+                                        min="100000"
+                                        max="500000"
+                                        step="10000"
+                                        value="500000"
+                                        id="pricePerMeterMax"
+                                        hidden
+                                    />
+                                </div>
+                            </div>
+                            <div class="property-filter">
+                                <div class="slider-header">
+                                    <label>Площадь, м²</label>
+                                    <span id="areaRangeValue">20–200</span>
+                                </div>
+                                <div class="range-slider" data-id="areaRange">
+                                    <div class="range-slider__track">
+                                        <div class="range-slider__track-filled"></div>
+                                    </div>
+                                    <div class="range-slider__thumb range-slider__thumb--min"></div>
+                                    <div class="range-slider__thumb range-slider__thumb--max"></div>
+                                    <input type="range" min="20" max="200" step="1" value="20" id="areaMin" hidden />
+                                    <input type="range" min="20" max="200" step="1" value="200" id="areaMax" hidden />
+                                </div>
+                            </div>
+                            <div class="property-filter">
+                                <div class="slider-header">
+                                    <label>Этаж</label>
+                                    <span id="floorRangeValue">1–30</span>
+                                </div>
+                                <div class="range-slider" data-id="floorRange">
+                                    <div class="range-slider__track">
+                                        <div class="range-slider__track-filled"></div>
+                                    </div>
+                                    <div class="range-slider__thumb range-slider__thumb--min"></div>
+                                    <div class="range-slider__thumb range-slider__thumb--max"></div>
+                                    <input type="range" min="1" max="30" step="1" value="1" id="floorMin" hidden />
+                                    <input type="range" min="1" max="30" step="1" value="30" id="floorMax" hidden />
+                                </div>
+                            </div>
+                            <div class="custom-select filters-dropdown">
+                                <span class="custom-select__label">Корпус</span>
+                                <div class="custom-select__trigger">
+                                    <svg
+                                        width="18"
+                                        height="10"
+                                        viewBox="0 0 18 10"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="custom-select__arrow"
+                                    >
+                                        <path
+                                            d="M1.50228 0.9888L8.99927 8.2968L16.4963 0.988801C16.6302 0.857956 16.81 0.784703 16.9973 0.784703C17.1845 0.784703 17.3643 0.857957 17.4983 0.988801C17.5631 1.05235 17.6147 1.1282 17.6498 1.21191C17.685 1.29561 17.7031 1.3855 17.7031 1.4763C17.7031 1.5671 17.685 1.65699 17.6498 1.7407C17.6147 1.82441 17.5631 1.90025 17.4983 1.9638L9.52277 9.7398C9.38271 9.87632 9.19486 9.95273 8.99927 9.95273C8.80369 9.95273 8.61584 9.87632 8.47577 9.7398L0.500275 1.9653C0.434959 1.90171 0.383045 1.82567 0.347599 1.74168C0.312153 1.6577 0.29389 1.56746 0.29389 1.4763C0.29389 1.38514 0.312153 1.2949 0.347599 1.21091C0.383045 1.12693 0.434959 1.05089 0.500275 0.987299C0.634216 0.856454 0.814032 0.783202 1.00128 0.783202C1.18852 0.783202 1.36833 0.856455 1.50228 0.987299L1.50228 0.9888Z"
+                                            fill="black"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="custom-select__options filters-dropdown__menu">
+                                    <label class="filters-radio">
+                                        <input type="radio" name="korpus" value="14" checked />
+                                        <span class="filters-radio__custom"></span>
+                                        14
+                                    </label>
+                                    <label class="filters-radio">
+                                        <input type="radio" name="korpus" value="15" />
+                                        <span class="filters-radio__custom"></span>
+                                        15
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filters-actions">
+                                <button class="filters-show-btn">Показать 365 результатов</button>
+                                <button class="filters-reset-btn">Сбросить фильтры</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main__filters-right">
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
+                        <div class="property-card">
+                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                            <div class="property-card__plan-wrapper">
+                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                            </div>
+                            <div class="property-card__badges">
+                                <span class="property-card__badge">Вид на реку</span>
+                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            </div>
+                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                            <div class="property-card__info-row">
+                                <span class="property-card__info-item">Корпус 3</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Секция 1</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">Этаж 22</span>
+                                <span class="property-card__info-separator">|</span>
+                                <span class="property-card__info-item">№168</span>
+                            </div>
+                            <div class="property-card__price-row">
+                                <span class="property-card__price">от 13 498 450 ₽</span>
+                                <span class="property-card__discount-badge">до -20%</span>
+                            </div>
+                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        </div>
                     </div>
                 </div>
             </section>

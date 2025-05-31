@@ -1284,6 +1284,7 @@ main {
     color: #000000;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
 }
 
 .property-card__discount-badge {
@@ -2016,6 +2017,11 @@ main {
     }
     .filters-actions {
         flex-direction: column;
+    }
+    .main__gallery-filter-btn {
+        min-width: 155px;
+        height: 32px;
+        font-size: 12px;
     }
 }
 @media (min-width: 1024px) {

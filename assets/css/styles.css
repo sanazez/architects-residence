@@ -1735,6 +1735,13 @@ main {
 .footer__br {
     display: none;
 }
+.contacts__info-link {
+    color: inherit;
+    text-decoration: none;
+}
+.contacts__info-link:hover {
+    text-decoration: none;
+}
 @media (max-width: 1899px) {
     body {
         padding: 36px 0;
@@ -2387,7 +2394,7 @@ main {
 }
 @media (max-width: 795px) {
     header {
-        padding: 0;
+        padding: 0 10px;
     }
     .main__promo {
         margin-top: 32px;

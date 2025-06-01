@@ -3,9 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
         <title>Document</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="stylesheet" href="assets/css/styles.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+        <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     </head>
     <body>
@@ -93,7 +96,16 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="main__promo-info-item">
-                                    <div class="main__promo-info-badge">24 этаж</div>
+                                    <div class="main__promo-info-badge">от 29 м²</div>
+                                    <div class="main__promo-info-text">
+                                        доходные дома<br />
+                                        для жизни и инвестиций
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main__promo-info-item">
+                                    <div class="main__promo-info-badge">24 этажа</div>
                                     <div class="main__promo-info-text">
                                         АПАРТАМЕНТЫ В ЦАО<br />
                                         С ВИДОМ НА ЯУЗУ
@@ -106,15 +118,6 @@
                                     <div class="main__promo-info-text">
                                         квартиры бизнес-класс<br />
                                         с высокой доходностью
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="main__promo-info-item">
-                                    <div class="main__promo-info-badge">от 29 м²</div>
-                                    <div class="main__promo-info-text">
-                                        доходные дома<br />
-                                        для жизни и инвестиций
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +141,10 @@
                                 <div class="main__about-slide-item main__about-slide-item--architecture">
                                     <div class="main__about-slide-item--overlay"></div>
                                     <div class="main__about-slide-text">АРХИТЕКТУРНЫЕ РЕШЕНИЯ</div>
+                                    <div class="main__about-slide-description">
+                                        В квартале продумано всё: от благоустройства общественных зон и дизайнерских
+                                        интерьеров
+                                    </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -323,7 +330,17 @@
                 <div class="main__property-header">
                     <div class="main__property-title title">Подобрать апартаменты</div>
                     <div class="main__property-select-row">
-                        <span class="property-number">№ ________</span>
+                        <div>
+                            <label for="property-number-input" class="visually-hidden">№</label>
+                            <input
+                                type="text"
+                                id="property-number-input"
+                                class="property-number"
+                                placeholder="________"
+                                aria-label="Номер"
+                                inputmode="numeric"
+                            />
+                        </div>
                         <div class="custom-select">
                             <button class="custom-select__trigger" type="button">
                                 <span class="custom-select__value">По возрастанию цены</span>
@@ -515,231 +532,533 @@
                             </div>
                         </div>
                     </div>
-                    <div class="main__filters-right">
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
+                    <div class="main__filters-right-wrapper" data-simplebar>
+                        <div class="main__filters-right">
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
                             </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
                             </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
                             </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
                             </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
+                            <div class="property-card">
+                                <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
+                                <div class="property-card__plan-wrapper">
+                                    <img
+                                        class="property-card__plan"
+                                        src="assets/images/ap-plan1.svg"
+                                        alt="План квартиры"
+                                    />
+                                </div>
+                                <div class="property-card__badges">
+                                    <span class="property-card__badge">Вид на реку</span>
+                                    <span class="property-card__badge">Доходность 20% годовых</span>
+                                </div>
+                                <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
+                                <div class="property-card__info-row">
+                                    <span class="property-card__info-item">Корпус 3</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Секция 1</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">Этаж 22</span>
+                                    <span class="property-card__info-separator">|</span>
+                                    <span class="property-card__info-item">№168</span>
+                                </div>
+                                <div class="property-card__price-row">
+                                    <span class="property-card__price">от 13 498 450 ₽</span>
+                                    <span class="property-card__discount-badge">до -20%</span>
+                                </div>
+                                <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                            </div>
                         </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
-                        </div>
-                        <div class="property-card">
-                            <div class="property-card__title">1-комнатная квартира, 33.1 м²</div>
-                            <div class="property-card__plan-wrapper">
-                                <img class="property-card__plan" src="assets/images/ap-plan1.svg" alt="План квартиры" />
-                            </div>
-                            <div class="property-card__badges">
-                                <span class="property-card__badge">Вид на реку</span>
-                                <span class="property-card__badge">Доходность 20% годовых</span>
-                            </div>
-                            <div class="property-card__delivery">Сдача I кв. 2026 г.</div>
-                            <div class="property-card__info-row">
-                                <span class="property-card__info-item">Корпус 3</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Секция 1</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">Этаж 22</span>
-                                <span class="property-card__info-separator">|</span>
-                                <span class="property-card__info-item">№168</span>
-                            </div>
-                            <div class="property-card__price-row">
-                                <span class="property-card__price">от 13 498 450 ₽</span>
-                                <span class="property-card__discount-badge">до -20%</span>
-                            </div>
-                            <button class="property-card__choose-btn">Выбрать апартаменты</button>
+                        <div class="custom-scrollbar">
+                            <div class="custom-scrollbar__thumb"></div>
                         </div>
                     </div>
                 </div>

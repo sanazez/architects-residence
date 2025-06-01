@@ -504,6 +504,22 @@ main {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex-direction: column;
+}
+.main__about-slide-description {
+    font-size: 24px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding: 0 16px;
+    z-index: 1;
+    position: absolute;
+    bottom: 56px;
+    display: none;
+}
+.main__about-slide-item:hover .main__about-slide-description {
+    display: block;
 }
 .main__about-slide-item--overlay {
     position: absolute;
@@ -534,6 +550,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     z-index: 2;
+    margin-bottom: 69px;
 }
 .title {
     font-size: 53px;
@@ -914,8 +931,6 @@ main {
     gap: 12px;
     width: 100%;
     background: #edece2;
-    border-radius: 16px;
-    padding: 12px 20px;
     cursor: pointer;
     font-size: 18px;
     color: #4f4f4f;
@@ -965,8 +980,9 @@ main {
 }
 .main__property-select-row {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    gap: 72px;
+    align-self: flex-end;
+    align-items: flex-end;
 }
 
 .property-number {
@@ -1286,6 +1302,9 @@ main {
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -2px;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .property-card__discount-badge {
@@ -1543,6 +1562,7 @@ main {
 .company__site-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     background: var(--button-primary-default-bg);
     color: #fbf9ed;
@@ -1556,7 +1576,7 @@ main {
     cursor: pointer;
     text-decoration: none;
     order: 5;
-    max-width: 344px;
+    max-width: 460px;
 }
 .company__site-btn:hover {
     background: var(--button-primary-hover-bg);
@@ -1742,9 +1762,55 @@ main {
 .contacts__info-link:hover {
     text-decoration: none;
 }
+.property-number {
+    background: #edece2;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 90px;
+    padding: 2px 8px;
+    color: #2f2e2e;
+}
+.property-number::placeholder {
+    color: #2f2e2e;
+    opacity: 1;
+}
+.main__filters-right-wrapper {
+    position: relative;
+    flex: 1;
+    max-height: 1970px;
+    display: flex;
+}
+
+.main__filters-right {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 44px;
+}
+
+.main__filters-right {
+    max-height: 1970px;
+    padding-right: 16px;
+}
+[data-simplebar] .simplebar-scrollbar {
+    width: 4px;
+    background: #560300;
+    border-radius: 8px;
+    left: 1px;
+}
+[data-simplebar] .simplebar-track {
+    width: 6px !important;
+    background: #fff;
+    border-radius: 8px;
+}
+/*.main__about-slide-description {
+    display: none;
+}*/
 @media (max-width: 1899px) {
     body {
-        padding: 36px 0;
+        padding: 36px 0 0;
     }
     main {
         padding-right: 36px;
@@ -1887,7 +1953,7 @@ main {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 390px;
+        width: 100%;
         height: 100%;
         background: #560300;
         flex-direction: column;
@@ -2214,7 +2280,6 @@ main {
         overflow-y: auto;
         padding: 10px;
         box-sizing: border-box;
-        max-width: 390px;
     }
 
     .filters-show-btn,
@@ -2402,7 +2467,7 @@ main {
     .main__about-swiper-wrapper {
         width: calc(100vw - 380px);
     }
-    .header__favourites,
+
     .header__phone {
         display: none;
     }
@@ -2436,6 +2501,9 @@ main {
     .contacts__map img {
         height: 100%;
         width: auto;
+    }
+    .footer {
+        margin-top: 96px;
     }
 }
 @media (max-width: 723px) {
@@ -2580,6 +2648,7 @@ main {
     }
     .company__site-btn {
         font-size: 14px;
+        width: 100%;
     }
     .company__site-btn svg {
         width: 22px;
@@ -2642,6 +2711,9 @@ main {
     .footer__btn {
         width: 100%;
         flex-shrink: 0;
+    }
+    .header__favourites {
+        display: none;
     }
 }
 @media (max-width: 398px) {

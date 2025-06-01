@@ -207,11 +207,12 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #edece2;
-    padding: 36px 140px 0;
+    padding: 36px 0 0;
 }
 
 main {
     width: 100%;
+    padding: 0 140px 0;
 }
 
 header {
@@ -1625,9 +1626,125 @@ main {
     font-family: 'TenorSans', sans-serif;
     font-weight: 400;
 }
+.footer {
+    background: #560300;
+    color: #fff;
+    padding: 57px 140px 64px 140px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 148px;
+}
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+.footer__row--top {
+    margin-bottom: 60px;
+}
+.footer__logo img {
+    height: 48px;
+}
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+}
+.footer__phone {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: 'TenorSans', sans-serif;
+}
+.footer__btn {
+    font-size: 20px;
+    background: #fff;
+    color: #560300;
+    border: none;
+    border-radius: 32px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer__btn:hover {
+    background: #e5e5e5;
+}
+.footer__row--middle {
+    margin-bottom: 78px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 85px;
+}
+.footer__office {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    letter-spacing: -1px;
+}
+.footer__office-title {
+    font-size: 24px;
+    font-weight: 400;
+}
+.footer__office-address,
+.footer__office-hours {
+    font-size: 18px;
+    font-weight: 500;
+}
+.footer__menu {
+    display: flex;
+    column-gap: 138px;
+    row-gap: 40px;
+}
+.footer__menu-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.footer__menu-col a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+.footer__menu-col a:hover {
+    color: #e5e5e5;
+}
+.footer__row--bottom {
+    align-items: center;
+    font-size: 16px;
+}
+.footer__policy {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+.footer__disclaimer,
+.footer__copyright {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+}
+.footer__logo-mobile {
+    display: none;
+}
+.footer__br {
+    display: none;
+}
 @media (max-width: 1899px) {
     body {
-        padding: 36px 36px;
+        padding: 36px 0;
+    }
+    main {
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+    .footer {
+        padding: 57px 36px 64px 36px;
     }
     .main__promo-text {
         font-size: 58px;
@@ -1674,6 +1791,15 @@ main {
     .contacts__info {
         width: 370px;
         padding: 24px;
+    }
+    .footer__row--middle {
+        flex-wrap: wrap;
+    }
+    .footer__menu {
+        order: 1;
+    }
+    .footer__office {
+        order: 2;
     }
 }
 @media (max-width: 1447px) {
@@ -1912,6 +2038,38 @@ main {
         height: 8px;
     }
 }
+@media (max-width: 1111px) {
+    .footer__logo-full {
+        display: none;
+    }
+    .footer__logo-mobile {
+        display: block;
+    }
+    .footer__phone {
+        font-size: 20px;
+    }
+    .footer__btn {
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .footer__menu-col a {
+        font-size: 16px;
+    }
+    .footer__office-title {
+        font-size: 16px;
+    }
+    .footer__office-address,
+    .footer__office-hours,
+    .footer__policy,
+    .footer__disclaimer,
+    .footer__copyright {
+        font-size: 12px;
+    }
+    .footer__menu {
+        flex-wrap: wrap;
+    }
+}
 @media (max-width: 1199px) {
     .property-card {
         border-radius: 16px;
@@ -1958,7 +2116,11 @@ main {
 }
 @media (max-width: 1023px) {
     body {
-        padding: 20px 10px;
+        padding: 20px 0 0;
+    }
+    main {
+        padding-right: 10px;
+        padding-left: 10px;
     }
     .main__promo-text {
         font-size: 40px;
@@ -2215,6 +2377,13 @@ main {
     .main__callback-desc {
         font-size: 16px;
     }
+    .main__gallery-filters {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 @media (max-width: 795px) {
     header {
@@ -2237,13 +2406,7 @@ main {
     .main__gallery-slider .swiper-slide {
         height: 448px;
     }
-    .main__gallery-filters {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        width: 100%;
-        max-width: 100%;
-    }
+
     .main__property-header {
         flex-direction: column;
         align-items: flex-start;
@@ -2272,6 +2435,23 @@ main {
     .property-card {
         border-radius: 16px;
         width: 100%;
+    }
+    .footer {
+        padding: 23px 10px 20px 10px;
+    }
+    .footer__row--bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer__menu {
+        row-gap: 16px;
+    }
+    .footer__menu-col {
+        gap: 8px;
+    }
+    .footer__row--middle {
+        gap: 56px;
+        margin-bottom: 24px;
     }
 }
 @media (max-width: 679px) {
@@ -2313,6 +2493,9 @@ main {
     }
     .company__stats .company__stat-group:first-child {
         padding-right: 46px;
+    }
+    .footer__menu {
+        column-gap: 40px;
     }
 }
 @media (max-width: 526px) {
@@ -2414,6 +2597,9 @@ main {
     .contacts__map {
         height: 296px;
     }
+    .footer__br {
+        display: block;
+    }
 }
 @media (max-width: 711px) {
     .main__promo-text {
@@ -2434,7 +2620,23 @@ main {
         font-size: 12px;
     }
 }
-
+@media (max-width: 448px) {
+    .footer__row--top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px;
+        margin-bottom: 56px;
+    }
+    .footer__contacts {
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+    }
+    .footer__btn {
+        width: 100%;
+        flex-shrink: 0;
+    }
+}
 @media (max-width: 398px) {
     .main__promo-actions {
         flex-direction: column;

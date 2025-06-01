@@ -471,6 +471,10 @@ const initPhoneInput = () => {
     });
 };
 
+const setYearToCopyRight = () => {
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+};
+
 const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
         initSliders();
@@ -480,6 +484,7 @@ const init = () => {
         initMobileFilters();
         initFiltersDropdown();
         initPhoneInput();
+        setYearToCopyRight();
     });
 };
 

@@ -1085,9 +1085,9 @@ main {
 }
 .main__property-filters-header {
     display: none;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 12px;
 }
 .main__property-filters-title {
     font-size: 16px;
@@ -1804,11 +1804,181 @@ main {
     width: 6px !important;
     background: #fff;
     border-radius: 8px;
-    height: 400px !important;
 }
-/*.main__about-slide-description {
-    display: none;
-}*/
+.breadcrumbs {
+    font-size: 16px;
+    color: #a1a09a;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin: 0 8px;
+    color: #a1a09a;
+}
+
+.breadcrumbs li:last-child::before {
+    content: '/';
+    margin: 0 8px 0 8px;
+    color: #a31f1a;
+    display: inline-block;
+}
+
+.breadcrumbs li:nth-last-child(2)::after {
+    content: '';
+    margin: 0;
+}
+
+.breadcrumbs li[aria-current='page'] {
+    color: #a31f1a;
+    font-weight: 500;
+}
+
+.breadcrumbs li a {
+    color: #a1a09a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumbs li[aria-current='page'] {
+    color: #a31f1a;
+    font-weight: 500;
+}
+
+.breadcrumbs li[aria-current='page']::after {
+    color: #a31f1a;
+}
+.breadcrumbs {
+    margin-top: 98px;
+    margin-bottom: 86px;
+}
+.section--apartment-details-content {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 24px;
+    row-gap: 40px;
+}
+.apartment-info-block {
+    background: #560300;
+    width: 254px;
+    height: 294px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 23px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+.apartment-print-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #3a3838;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    font-weight: 500;
+}
+.apartment-print-btn svg {
+    vertical-align: middle;
+}
+
+.property-card__actions {
+    width: 391px;
+}
+.apartment-details__price {
+    font-size: 48px;
+    font-family: 'TenorSans', sans-serif;
+    color: #560300;
+    letter-spacing: -2px;
+}
+.apartment-details__fav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #560300;
+    color: #560300;
+    background: #edece2;
+    border-radius: 32px;
+    padding: 10px 24px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.apartment-plan img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.development-plan {
+    width: 339px;
+    height: 242px;
+}
+.apartment-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.apartment-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'TenorSans', sans-serif;
+    font-weight: 400;
+}
+
+.apartment-info-label {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.apartment-info-value {
+    color: #fff;
+    font-size: 29px;
+    line-height: 1;
+}
+.apartment-details__top-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+.apartment-details__plan-block {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    flex-grow: 1;
+    justify-content: center;
+}
 @media (max-width: 1899px) {
     body {
         padding: 36px 0 0;
@@ -1861,6 +2031,7 @@ main {
         font-size: 30px;
     }
 }
+
 @media (max-width: 1563px) {
     .property-card {
         border-radius: 16px;
@@ -2060,6 +2231,10 @@ main {
     }
     .company__stat-group {
         column-gap: 26px;
+    }
+    .breadcrumbs {
+        margin-top: 44px;
+        margin-bottom: 44px;
     }
 }
 @media (max-width: 1355px) {
@@ -2426,6 +2601,9 @@ main {
         border-bottom-right-radius: 16px;
         overflow: hidden;
     }
+    .breadcrumbs {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 920px) {
@@ -2581,6 +2759,13 @@ main {
     }
     .footer__menu {
         column-gap: 40px;
+    }
+    .section--property-selection {
+        padding-top: 12px;
+    }
+    .breadcrumbs {
+        margin-top: 44px;
+        margin-bottom: 12px;
     }
 }
 @media (max-width: 526px) {

@@ -2030,6 +2030,9 @@ main {
     .main__about-slide-text {
         font-size: 30px;
     }
+    .property-card__price {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 1563px) {

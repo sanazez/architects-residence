@@ -2033,10 +2033,6 @@ main {
 }
 
 @media (max-width: 1563px) {
-    .property-card {
-        border-radius: 16px;
-        width: calc((100% - 24px) / 2);
-    }
     .contacts__info-value {
         font-size: 22px;
     }
@@ -2054,6 +2050,10 @@ main {
     }
     .footer__office {
         order: 2;
+    }
+    .property-card {
+        border-radius: 16px;
+        width: calc((100% - 24px) / 2);
     }
 }
 @media (max-width: 1447px) {

@@ -89,6 +89,15 @@ const initMobileMenu = () => {
     });
 };
 
+const getYearWordForm = (number) => {
+    if (!Number.isInteger(number)) return 'года';
+    const lastDigit = number % 10;
+    const lastTwoDigits = number % 100;
+    if (lastDigit === 1 && lastTwoDigits !== 11) return 'год';
+    if ([2, 3, 4].includes(lastDigit) && ![12, 13, 14].includes(lastTwoDigits)) return 'года';
+    return 'лет';
+};
+
 class CustomSlider {
     constructor(slider) {
         this.slider = slider;
@@ -99,7 +108,18 @@ class CustomSlider {
         this.valueSpan = slider.querySelector('span');
         this.isDragging = false;
 
-        if (!this.thumb || !this.trackFilled || !this.track || !this.input || !this.valueSpan) return;
+        if (!this.thumb || !this.trackFilled || !this.track || !this.input || !this.valueSpan) {
+            console.error('CustomSlider: Missing elements', {
+                thumb: this.thumb,
+                trackFilled: this.trackFilled,
+                track: this.track,
+                input: this.input,
+                valueSpan: this.valueSpan,
+            });
+            return;
+        }
+
+        this.input.min = 0;
 
         this.init();
     }
@@ -113,7 +133,43 @@ class CustomSlider {
         this.input.value = value;
 
         this.valueSpan.textContent =
-            this.input.id === 'yearsRange' ? `${value} лет` : `${Number(value).toLocaleString('ru-RU')}`;
+            this.input.id === 'yearsRange'
+                ? `${value} ${getYearWordForm(value)}`
+                : `${Number(value).toLocaleString('ru-RU')}`;
+
+        this.updateResults();
+    }
+
+    updateResults() {
+        const priceValue = parseFloat(document.querySelector('#priceRange')?.value || 0);
+        const downPaymentValue = parseFloat(document.querySelector('#downPaymentRange')?.value || 0);
+        const yearsValue = parseFloat(document.querySelector('#yearsRange')?.value || 0);
+
+        const roiElement = document.querySelector('#roi');
+        if (roiElement) {
+            if (downPaymentValue === 0) {
+                roiElement.textContent = '0';
+            } else {
+                const months = Math.ceil(priceValue / downPaymentValue);
+                if (months % 12 === 0) {
+                    const years = months / 12;
+                    roiElement.textContent = `~ ${years} ${getYearWordForm(years)}`;
+                } else {
+                    const years = (months / 12).toFixed(1);
+                    roiElement.textContent = `~ ${years} года`;
+                }
+            }
+        }
+
+        const rentIncomeElement = document.querySelector('#rentIncome');
+        if (rentIncomeElement) {
+            rentIncomeElement.textContent = `~ ${Math.round(downPaymentValue * yearsValue * 12).toLocaleString('ru-RU')}`;
+        }
+
+        const priceGrowthElement = document.querySelector('#priceGrowth');
+        if (priceGrowthElement) {
+            priceGrowthElement.textContent = '~ 7,5% + / в год';
+        }
     }
 
     handleTrackClick(e) {
@@ -159,6 +215,12 @@ class CustomSlider {
 
         document.addEventListener('mouseup', stopDrag);
         document.addEventListener('touchend', stopDrag);
+
+        this.input.addEventListener('input', () => {
+            this.updateSlider(parseFloat(this.input.value));
+        });
+
+        this.updateResults();
     }
 }
 
@@ -171,7 +233,7 @@ class RangeSlider {
         this.track = slider.querySelector('.range-slider__track');
         this.minInput = slider.querySelector('input[id$="Min"]');
         this.maxInput = slider.querySelector('input[id$="Max"]');
-        this.valueSpan = slider.closest('.property-filter').querySelector('.slider-header span');
+        this.valueSpan = slider.closest('.property-filter').querySelector('span');
         this.isDragging = null;
 
         if (
@@ -498,168 +560,6 @@ const initNumberInput = () => {
         let value = e.target.value;
         e.target.value = value.replace(/\D/g, '');
     });
-};
-
-const initCustomScroll = () => {
-    const wrapper = document.querySelector('.main__filters-right-wrapper');
-    if (!wrapper) {
-        console.warn('Custom Scroll: .main__filters-right-wrapper not found');
-        return;
-    }
-
-    const container = wrapper.querySelector('.main__filters-right');
-    const scrollbar = wrapper.querySelector('.custom-scrollbar');
-    const thumb = scrollbar.querySelector('.custom-scrollbar__thumb');
-
-    if (!container || !scrollbar || !thumb) {
-        console.warn('Custom Scroll: Missing elements', { container, scrollbar, thumb });
-        return;
-    }
-
-    const updateThumb = () => {
-        const containerHeight = container.clientHeight;
-        const contentHeight = container.scrollHeight;
-
-        if (contentHeight <= containerHeight || containerHeight === 0) {
-            scrollbar.style.display = 'none';
-            console.log('Custom Scroll: No scroll needed', { contentHeight, containerHeight });
-            return;
-        }
-
-        scrollbar.style.display = 'block';
-
-        const thumbHeight = Math.max(30, (containerHeight / contentHeight) * containerHeight);
-        thumb.style.height = `${thumbHeight}px`;
-
-        const maxScroll = contentHeight - containerHeight;
-        const scrollRatio = Math.min(1, Math.max(0, container.scrollTop / maxScroll));
-        const maxThumbTop = containerHeight - thumbHeight;
-        const thumbTop = scrollRatio * maxThumbTop;
-        thumb.style.top = `${thumbTop}px`;
-
-        console.log('Custom Scroll: Updated thumb', {
-            containerHeight,
-            contentHeight,
-            scrollTop: container.scrollTop,
-            thumbHeight,
-            scrollRatio,
-            thumbTop,
-        });
-    };
-
-    const handleThumbDrag = (e) => {
-        e.preventDefault();
-        const startY = e.clientY || (e.touches && e.touches[0].clientY);
-        const startThumbTop = parseFloat(thumb.style.top) || 0;
-        const containerHeight = container.clientHeight;
-        const thumbHeight = thumb.offsetHeight;
-        const maxThumbTop = containerHeight - thumbHeight;
-        const contentHeight = container.scrollHeight;
-        const maxScroll = contentHeight - containerHeight;
-
-        const moveHandler = (moveEvent) => {
-            moveEvent.preventDefault();
-            const currentY = moveEvent.clientY || (moveEvent.touches && moveEvent.touches[0].clientY);
-            const deltaY = currentY - startY;
-            let newThumbTop = startThumbTop + deltaY;
-            newThumbTop = Math.max(0, Math.min(newThumbTop, maxThumbTop));
-
-            thumb.style.top = `${newThumbTop}px`;
-            const scrollRatio = newThumbTop / maxThumbTop;
-            container.scrollTop = scrollRatio * maxScroll;
-
-            console.log('Custom Scroll: Dragging', { newThumbTop, scrollTop: container.scrollTop });
-        };
-
-        const stopHandler = () => {
-            document.removeEventListener('mousemove', moveHandler);
-            document.removeEventListener('mouseup', stopHandler);
-            document.removeEventListener('touchmove', moveHandler);
-            document.removeEventListener('touchend', stopHandler);
-        };
-
-        document.addEventListener('mousemove', moveHandler);
-        document.addEventListener('mouseup', stopHandler);
-        document.addEventListener('touchmove', moveHandler, { passive: false });
-        document.addEventListener('touchend', stopHandler);
-    };
-
-    const handleScrollEvent = (e) => {
-        const containerHeight = container.clientHeight;
-        const contentHeight = container.scrollHeight;
-        if (contentHeight <= containerHeight) {
-            console.log('Custom Scroll: Allowing scroll, no overflow');
-            return;
-        }
-
-        const delta = e.deltaY || e.detail || -e.wheelDelta;
-        const isScrollingDown = delta > 0;
-        const isScrollingUp = delta < 0;
-
-        const atTop = container.scrollTop <= 0;
-        const atBottom = container.scrollTop >= contentHeight - containerHeight - 1;
-
-        if ((!atTop && isScrollingUp) || (!atBottom && isScrollingDown)) {
-            console.log('Custom Scroll: Allowing container scroll', {
-                scrollTop: container.scrollTop,
-                delta,
-            });
-        } else if ((isScrollingUp && atTop) || (isScrollingDown && atBottom)) {
-            console.log('Custom Scroll: Allowing page scroll', { atTop, atBottom, delta });
-        } else {
-            e.preventDefault();
-            console.log('Custom Scroll: Preventing scroll', { scrollTop: container.scrollTop, delta });
-        }
-    };
-
-    const handleTouchMove = (e) => {
-        const containerHeight = container.clientHeight;
-        const contentHeight = container.scrollHeight;
-        if (contentHeight <= containerHeight) {
-            return;
-        }
-
-        const atTop = container.scrollTop <= 0;
-        const atBottom = container.scrollTop >= contentHeight - containerHeight - 1;
-
-        const touch = e.touches[0];
-        const deltaY = touch.clientY - (container.dataset.lastTouchY || touch.clientY);
-        container.dataset.lastTouchY = touch.clientY;
-
-        if ((!atTop && deltaY > 0) || (!atBottom && deltaY < 0)) {
-            console.log('Custom Scroll: Allowing container touch scroll', {
-                scrollTop: container.scrollTop,
-                deltaY,
-            });
-        } else if ((deltaY > 0 && atTop) || (deltaY < 0 && atBottom)) {
-            console.log('Custom Scroll: Allowing page touch scroll', { deltaY, atTop, atBottom });
-            // Разрешаем прокрутку странице
-        } else {
-            e.preventDefault();
-            console.log('Custom Scroll: Preventing touch scroll', {
-                deltaY,
-                scrollTop: container.scrollTop,
-            });
-        }
-    };
-
-    // События
-    container.addEventListener(
-        'scroll',
-        () => {
-            updateThumb();
-            console.log('Custom Scroll: Scroll event triggered', { scrollTop: container.scrollTop });
-        },
-        { passive: true },
-    );
-    container.addEventListener('wheel', handleScrollEvent, { passive: false });
-    container.addEventListener('touchmove', handleTouchMove, { passive: false });
-    thumb.addEventListener('mousedown', handleThumbDrag);
-    thumb.addEventListener('touchstart', handleThumbDrag, { passive: false });
-    window.addEventListener('resize', updateThumb);
-
-    // Инициализация
-    updateThumb();
 };
 
 const init = () => {

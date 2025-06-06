@@ -579,10 +579,15 @@ const initNumberInput = () => {
 
 const positionBlocks = () => {
     const contentBlock = document.querySelector('.section--apartment-details-content');
+    const toggle = document.querySelector('.feature-toggle');
+    if (!toggle) {
+        return;
+    }
     if (window.innerWidth > 679) {
         contentBlock.style.height = 'auto';
         return;
     }
+
     const planBlock = document.querySelector('.apartment-details__plan-block');
     const priceRow = document.querySelector('.property-card__price-row');
     const infoBlock = document.querySelector('.apartment-info-block');

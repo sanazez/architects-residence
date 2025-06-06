@@ -61,6 +61,21 @@ const initSliders = () => {
             1024: { slidesPerView: 2 },
         },
     });
+    new Swiper('.main__filters-right--apartments', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '.apartments-swiper-dots',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+        },
+        breakpoints: {
+            674: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1448: { slidesPerView: 4 },
+        },
+    });
 };
 
 const initMobileMenu = () => {
@@ -562,6 +577,57 @@ const initNumberInput = () => {
     });
 };
 
+const positionBlocks = () => {
+    const contentBlock = document.querySelector('.section--apartment-details-content');
+    if (window.innerWidth > 679) {
+        contentBlock.style.height = 'auto';
+        return;
+    }
+    const planBlock = document.querySelector('.apartment-details__plan-block');
+    const priceRow = document.querySelector('.property-card__price-row');
+    const infoBlock = document.querySelector('.apartment-info-block');
+    const chooseBtn = document.querySelector('.apartment-details__choose-btn');
+    const favBtn = document.querySelector('.apartment-details__fav-btn');
+    const printBtn = document.querySelector('.apartment-print-btn');
+    const disclaimerBlock = document.querySelector('.apartment-details__disclaimer');
+
+    if (
+        !contentBlock ||
+        !planBlock ||
+        !priceRow ||
+        !infoBlock ||
+        !chooseBtn ||
+        !favBtn ||
+        !printBtn ||
+        !disclaimerBlock
+    ) {
+        console.error('Missing required elements for positioning');
+        return;
+    }
+
+    contentBlock.style.height = 'auto';
+
+    const planBlockHeight = planBlock.offsetHeight;
+
+    priceRow.style.top = `${planBlockHeight + 16}px`;
+    infoBlock.style.top = `${planBlockHeight + priceRow.offsetHeight + 32}px`;
+    chooseBtn.style.top = `${planBlockHeight + priceRow.offsetHeight + infoBlock.offsetHeight + 22}px`;
+    favBtn.style.top = `${planBlockHeight + priceRow.offsetHeight + infoBlock.offsetHeight + chooseBtn.offsetHeight + 50}px`;
+    printBtn.style.top = `${planBlockHeight + priceRow.offsetHeight + infoBlock.offsetHeight + chooseBtn.offsetHeight + favBtn.offsetHeight + 74}px`;
+    disclaimerBlock.style.top = `${planBlockHeight + priceRow.offsetHeight + infoBlock.offsetHeight + chooseBtn.offsetHeight + favBtn.offsetHeight + printBtn.offsetHeight + 90}px`;
+
+    const totalHeight =
+        planBlockHeight +
+        priceRow.offsetHeight +
+        infoBlock.offsetHeight +
+        chooseBtn.offsetHeight +
+        favBtn.offsetHeight +
+        printBtn.offsetHeight +
+        disclaimerBlock.offsetHeight;
+
+    contentBlock.style.height = `${totalHeight + 92}px`;
+};
+
 const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
         initSliders();
@@ -573,6 +639,12 @@ const init = () => {
         initPhoneInput();
         setYearToCopyRight();
         initNumberInput();
+        positionBlocks();
+        window.addEventListener('resize', positionBlocks);
+        const planImage = document.querySelector('.apartment-plan img');
+        if (planImage) {
+            planImage.addEventListener('load', positionBlocks);
+        }
     });
 };
 

@@ -2152,6 +2152,210 @@ main {
     padding: 14px 82px;
     text-decoration: none;
 }
+.booking-modal {
+    background: #edece2;
+    border-radius: 36px;
+    max-width: 1022px;
+    padding: 40px;
+    position: relative;
+    margin: 40px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+.booking-modal__close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: rgba(47, 46, 46, 0.6);
+    cursor: pointer;
+    z-index: 1;
+}
+.booking-modal__title {
+    text-align: center;
+    font-size: 32px;
+    color: #560300;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+}
+.booking-modal__content {
+    display: flex;
+    gap: 40px;
+}
+.booking-modal__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.booking-modal__img-wrapper {
+    padding: 23px 32px;
+    margin-bottom: 16px;
+}
+.booking-modal__plan-img {
+    width: 100%;
+}
+.booking-modal__badges {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+.booking-modal__badge {
+    font-size: 14px;
+    color: #000000;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: #edece2;
+}
+.booking-modal__info-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-size: 15px;
+    color: #090909;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 24px;
+}
+.booking-modal__info-row span {
+    font-size: 15px;
+    color: #090909;
+}
+.booking-modal__info-sep {
+    margin: 0 12px;
+    color: #a1a09a;
+    user-select: none;
+}
+.booking-modal__price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+}
+.booking-modal__price {
+    font-size: 33px;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+.booking-modal__discount {
+    font-size: 20px;
+    color: #000000;
+    background: #efe0cf;
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-left: 12px;
+}
+.booking-modal__right {
+    flex: 1;
+}
+.booking-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.booking-modal__input {
+    height: 48px;
+    border: 1px solid #560300;
+    border-radius: 32px;
+    background: #fff;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #560300;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.booking-modal__input::placeholder {
+    color: rgba(86, 3, 0, 0.44);
+    opacity: 1;
+}
+.booking-modal__checkbox-row {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.booking-modal__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 16px;
+    color: #2f2e2e;
+    font-family: 'Montserrat', sans-serif;
+    gap: 12px;
+    user-select: none;
+}
+
+.booking-modal__checkbox-input {
+    display: none;
+}
+
+.booking-modal__checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(47, 46, 46, 0.6);
+    border-radius: 4px;
+    background: transparent;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.booking-modal__checkbox-input:checked + .booking-modal__checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 7px;
+    height: 12px;
+    border: solid #560300;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.booking-modal__checkbox-text {
+    font-size: 16px;
+    color: #2f2e2e;
+    line-height: 1.4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.booking-modal__checkbox-link {
+    color: #2f2e2e;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.booking-modal__submit-btn {
+    margin-top: 76px;
+    width: 100%;
+    height: 48px;
+    background: #560300;
+    color: #fbf9ed;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.booking-modal__submit-btn:hover {
+    background: #4b0300;
+}
 @media (max-width: 1899px) {
     body {
         padding: 36px 0 0;
@@ -2899,7 +3103,38 @@ main {
         font-size: 14px;
     }
 }
-
+@media (max-width: 920px) {
+    .booking-modal {
+        max-width: 370px;
+        padding: 40px 24px;
+    }
+    .booking-modal__content {
+        flex-direction: column;
+    }
+    .booking-modal__badge {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    .booking-modal__info-sep {
+        margin: 0 11px;
+    }
+    .booking-modal__price {
+        letter-spacing: -2px;
+        font-size: 28px;
+    }
+    .booking-modal__input {
+        font-size: 14px;
+    }
+    .booking-modal__checkbox-row {
+        margin-top: 4px;
+    }
+    .booking-modal__checkbox-text {
+        font-size: 12px;
+    }
+    .booking-modal__submit-btn {
+        margin-top: 12px;
+    }
+}
 @media (max-width: 920px) {
     .main__promo-info {
         height: 26%;

@@ -1,73 +1,65 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-</head>
-<body>
-<div class="booking-modal">
-    <button class="booking-modal__close" aria-label="Закрыть">&times;</button>
-    <div class="booking-modal__title">Заявка на бронирование</div>
-    <div class="booking-modal__content">
-        <div class="booking-modal__left">
-            <div class="booking-modal__img-wrapper">
-                <img src="assets/images/booking-plan.svg" alt="План квартиры" class="booking-modal__plan-img" />
-            </div>
-            <div class="booking-modal__badges">
-                <span class="booking-modal__badge">Вид на реку</span>
-                <span class="booking-modal__badge">Доходность 20% годовых</span>
-            </div>
-            <div class="booking-modal__info-row">
-                <span>Корпус 3</span>
-                <span class="booking-modal__info-sep">|</span>
-                <span>Секция 1</span>
-                <span class="booking-modal__info-sep">|</span>
-                <span>Этаж 22</span>
-                <span class="booking-modal__info-sep">|</span>
-                <span>№168</span>
-            </div>
-            <div class="booking-modal__price-row">
-                <span class="booking-modal__price">от 13 498 450&nbsp;₽</span>
-                <span class="booking-modal__discount">до -20%</span>
-            </div>
-        </div>
-        <div class="booking-modal__right">
-            <form class="booking-modal__form">
-                <input
-                    type="text"
-                    class="booking-modal__input"
-                    placeholder="Имя"
-                    required
-                />
-                <input
-                    type="tel"
-                    class="booking-modal__input"
-                    placeholder="Телефон"
-                    required
-                />
-                <input
-                    type="email"
-                    class="booking-modal__input"
-                    placeholder="E-mail"
-                    required
-                />
-                <div class="booking-modal__checkbox-row">
-                    <label class="booking-modal__checkbox-label">
-                        <input type="checkbox" required class="booking-modal__checkbox-input" />
-                        <span class="booking-modal__checkbox-custom"></span>
-                        <span class="booking-modal__checkbox-text">
-      Нажимая на кнопку Отправить, Вы соглашаетесь на обработку
-      <a href="#" class="booking-modal__checkbox-link">персональных данных</a>
-    </span>
-                    </label>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Document</title>
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+    <body>
+        <div class="modal__overlay">
+            <div class="booking-modal">
+                <button class="booking-modal__close" aria-label="Закрыть">&times;</button>
+                <div class="booking-modal__title">Заявка на бронирование</div>
+                <div class="booking-modal__content">
+                    <div class="booking-modal__left">
+                        <div class="booking-modal__img-wrapper">
+                            <img
+                                src="assets/images/booking-plan.svg"
+                                alt="План квартиры"
+                                class="booking-modal__plan-img"
+                            />
+                        </div>
+                        <div class="booking-modal__badges">
+                            <span class="booking-modal__badge">Вид на реку</span>
+                            <span class="booking-modal__badge">Доходность 20% годовых</span>
+                        </div>
+                        <div class="booking-modal__info-row">
+                            <span>Корпус 3</span>
+                            <span class="booking-modal__info-sep">|</span>
+                            <span>Секция 1</span>
+                            <span class="booking-modal__info-sep">|</span>
+                            <span>Этаж 22</span>
+                            <span class="booking-modal__info-sep">|</span>
+                            <span>№168</span>
+                        </div>
+                        <div class="booking-modal__price-row">
+                            <span class="booking-modal__price">от 13 498 450&nbsp;₽</span>
+                            <span class="booking-modal__discount">до -20%</span>
+                        </div>
+                    </div>
+
+                    <div class="booking-modal__right">
+                        <form class="booking-modal__form">
+                            <input type="text" class="booking-modal__input" placeholder="Имя" required />
+                            <input type="tel" class="booking-modal__input" placeholder="Телефон" required />
+                            <input type="email" class="booking-modal__input" placeholder="E-mail" required />
+                            <div class="booking-modal__checkbox-row">
+                                <label class="booking-modal__checkbox-label">
+                                    <input type="checkbox" required class="booking-modal__checkbox-input" />
+                                    <span class="booking-modal__checkbox-custom"></span>
+                                    <span class="booking-modal__checkbox-text">
+                                        Нажимая на кнопку Отправить, Вы соглашаетесь на обработку
+                                        <a href="#" class="booking-modal__checkbox-link">персональных данных</a>
+                                    </span>
+                                </label>
+                            </div>
+                            <button type="submit" class="booking-modal__submit-btn">Отправить</button>
+                        </form>
+                    </div>
                 </div>
-                <button type="submit" class="booking-modal__submit-btn">Отправить</button>
-            </form>
+            </div>
         </div>
-    </div>
-</div>
-</body>
+    </body>
 </html>

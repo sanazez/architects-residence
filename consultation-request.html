@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Document</title>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+    <body>
+        <div class="modal__overlay">
+            <div class="consultation-modal">
+                <button class="modal__close" aria-label="Закрыть">&times;</button>
+                <div class="modal__title">Заявка на консультацию</div>
+                <div class="consultation-modal__content">
+                    <div class="consultation-modal__left">
+                        <label class="consultation-modal__checkbox-label">
+                            <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                            <span class="consultation-modal__checkbox-custom"></span>
+                            <span class="consultation-modal__checkbox-text">О проекте</span>
+                        </label>
+                        <label class="consultation-modal__checkbox-label">
+                            <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                            <span class="consultation-modal__checkbox-custom"></span>
+                            <span class="consultation-modal__checkbox-text">Условия покупки</span>
+                        </label>
+                        <label class="consultation-modal__checkbox-label">
+                            <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                            <span class="consultation-modal__checkbox-custom"></span>
+                            <span class="consultation-modal__checkbox-text"
+                                >Стоимость, планировочное<br class="consultation-modal--br" />
+                                решение</span
+                            >
+                        </label>
+                        <label class="consultation-modal__checkbox-label">
+                            <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                            <span class="consultation-modal__checkbox-custom"></span>
+                            <span class="consultation-modal__checkbox-text"
+                                >Специальные<br class="consultation-modal--br" />
+                                предложения и лоты</span
+                            >
+                        </label>
+                        <label class="consultation-modal__checkbox-label">
+                            <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                            <span class="consultation-modal__checkbox-custom"></span>
+                            <span class="consultation-modal__checkbox-text">Другое</span>
+                        </label>
+                    </div>
+
+                    <div class="consultation-modal__right">
+                        <form class="consultation-modal__form">
+                            <input type="text" class="consultation-modal__input" placeholder="Имя" required />
+                            <input type="tel" class="consultation-modal__input" placeholder="Телефон" required />
+                            <input type="email" class="consultation-modal__input" placeholder="E-mail" required />
+                            <div class="consultation-modal__checkbox-row">
+                                <label class="consultation-modal__checkbox-label">
+                                    <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                                    <span class="consultation-modal__checkbox-custom"></span>
+                                    <span class="consultation-modal__checkbox-text">
+                                        Нажимая на кнопку Отправить, Вы соглашаетесь на обработку
+                                        <a href="#" class="consultation-modal__checkbox-link">персональных данных</a>
+                                    </span>
+                                </label>
+                            </div>
+                            <button type="submit" class="consultation-modal__submit-btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

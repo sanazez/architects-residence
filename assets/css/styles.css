@@ -2152,7 +2152,8 @@ main {
     padding: 14px 82px;
     text-decoration: none;
 }
-.booking-modal {
+.booking-modal,
+.consultation-modal {
     background: #edece2;
     border-radius: 36px;
     max-width: 1022px;
@@ -2164,7 +2165,7 @@ main {
     flex-direction: column;
     z-index: 1000;
 }
-.booking-modal__close {
+.modal__close {
     position: absolute;
     top: 32px;
     right: 32px;
@@ -2184,15 +2185,20 @@ main {
     margin-bottom: 48px;
     text-transform: uppercase;
 }
-.booking-modal__content {
+.booking-modal__content,
+.consultation-modal__content {
     display: flex;
     gap: 40px;
 }
-.booking-modal__left {
+.booking-modal__left,
+.consultation-modal__left {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+.consultation-modal__left {
+    min-width: 344px;
 }
 .booking-modal__img-wrapper {
     padding: 23px 32px;
@@ -2259,14 +2265,19 @@ main {
 .booking-modal__right {
     flex: 1;
 }
-.booking-modal__form {
+.consultation-modal__right {
+    max-width: 536px;
+}
+.booking-modal__form,
+.consultation-modal__form {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
 }
 
-.booking-modal__input {
+.booking-modal__input,
+.consultation-modal__input {
     height: 48px;
     border: 1px solid #560300;
     border-radius: 32px;
@@ -2278,17 +2289,21 @@ main {
     font-family: 'Montserrat', sans-serif;
 }
 
-.booking-modal__input::placeholder {
+.booking-modal__input::placeholder,
+.consultation-modal__input::placeholder {
     color: rgba(86, 3, 0, 0.44);
     opacity: 1;
 }
-.booking-modal__checkbox-row {
+.booking-modal__checkbox-row,
+.consultation-modal__checkbox-row {
     margin-top: 20px;
     display: flex;
     align-items: flex-start;
 }
 
-.booking-modal__checkbox-label {
+.booking-modal__checkbox-label,
+.consultation-modal__checkbox-label,
+.consultation-modal__checkbox-row {
     display: flex;
     align-items: flex-start;
     cursor: pointer;
@@ -2299,11 +2314,14 @@ main {
     user-select: none;
 }
 
-.booking-modal__checkbox-input {
+.booking-modal__checkbox-input,
+.consultation-modal__checkbox-input,
+.consultation-modal__custom-checkbox {
     display: none;
 }
 
-.booking-modal__checkbox-custom {
+.booking-modal__checkbox-custom,
+.consultation-modal__checkbox-custom {
     width: 20px;
     height: 20px;
     border: 1px solid rgba(47, 46, 46, 0.6);
@@ -2314,7 +2332,8 @@ main {
     flex-shrink: 0;
 }
 
-.booking-modal__checkbox-input:checked + .booking-modal__checkbox-custom::after {
+.booking-modal__checkbox-input:checked + .booking-modal__checkbox-custom::after,
+.consultation-modal__checkbox-input:checked + .consultation-modal__checkbox-custom::after {
     content: '';
     position: absolute;
     left: 5px;
@@ -2334,12 +2353,14 @@ main {
     font-weight: 500;
 }
 
-.booking-modal__checkbox-link {
+.booking-modal__checkbox-link,
+.consultation-modal__checkbox-link {
     color: #2f2e2e;
     text-decoration: underline;
     cursor: pointer;
 }
-.booking-modal__submit-btn {
+.booking-modal__submit-btn,
+.consultation-modal__submit-btn {
     margin-top: 76px;
     width: 100%;
     height: 48px;
@@ -2353,8 +2374,96 @@ main {
     font-weight: 500;
     transition: background 0.2s;
 }
-.booking-modal__submit-btn:hover {
+.consultation-modal__submit-btn {
+    margin-top: 4px;
+}
+.consultation-modal__submit-btn:hover {
     background: #4b0300;
+}
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.thanks-modal__window {
+    background: #edece2;
+    border-radius: 36px;
+    max-width: 1022px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative;
+}
+
+.modal__title {
+    font-size: 32px;
+    color: #560300;
+    margin-bottom: 48px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'TenorSans', sans-serif;
+    text-transform: uppercase;
+    margin-top: 24px;
+}
+
+.thanks-modal__text {
+    font-size: 22px;
+    color: #2f2e2e;
+    font-weight: 700;
+    margin-bottom: 48px;
+    text-align: center;
+    max-width: 700px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.thanks-modal__btn {
+    background: #560300;
+    color: #fff;
+    border: none;
+    border-radius: 32px;
+    padding: 13px 32px;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.thanks-modal__btn:hover {
+    background: #7a0a00;
+}
+.thanks-modal__btn-mobile {
+    display: none;
+}
+.consultation-modal__left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.consultation-modal__checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.consultation-modal__checkbox-label-text {
+    color: #2f2e2e;
+    font-size: 16px;
+}
+.consultation-modal--br {
+    display: none;
 }
 @media (max-width: 1899px) {
     body {
@@ -3176,6 +3285,29 @@ main {
         font-size: 14px;
         padding: 10px 0;
     }
+    .consultation-modal__content {
+        flex-direction: column;
+        gap: 48px;
+    }
+    .consultation-modal {
+        max-width: 370px;
+        padding: 40px 24px;
+    }
+    .consultation-modal__left {
+        min-width: none;
+    }
+    .consultation-modal--br {
+        display: block;
+    }
+    .consultation-modal__input {
+        font-size: 14px;
+    }
+    .consultation-modal__checkbox-row {
+        margin-top: 4px;
+    }
+    .consultation-modal__checkbox-label {
+        font-size: 12px;
+    }
 }
 @media (max-width: 847px) {
     .main__about-swiper-wrapper {
@@ -3204,6 +3336,25 @@ main {
         scrollbar-width: none;
         width: 100%;
         max-width: 100%;
+    }
+    .thanks-modal__window {
+        padding: 40px 24px 48px;
+        max-width: 370px;
+        height: auto;
+    }
+    .thanks-modal__text {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .thanks-modal__btn-mobile {
+        display: inline;
+    }
+    .thanks-modal__btn-full {
+        display: none;
+    }
+    .thanks-modal__btn {
+        font-size: 18px;
+        width: 100%;
     }
 }
 @media (max-width: 795px) {

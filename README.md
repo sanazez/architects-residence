@@ -12,3 +12,4 @@
 | Заявка на бронирование | https://sanazez.github.io/architects-residence/booking-request.html      |
 | Спасибо за заявку      | https://sanazez.github.io/architects-residence/thanks-request.html       |
 | Заявка на консультацию | https://sanazez.github.io/architects-residence/consultation-request.html |
+| Контакты               | https://sanazez.github.io/architects-residence/contacts.html             |

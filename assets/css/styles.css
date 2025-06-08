@@ -2465,6 +2465,9 @@ main {
 .consultation-modal--br {
     display: none;
 }
+.contacts.contacts__main {
+    margin-top: 0;
+}
 @media (max-width: 1899px) {
     body {
         padding: 36px 0 0;

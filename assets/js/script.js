@@ -61,6 +61,23 @@ const initSliders = () => {
             1024: { slidesPerView: 2 },
         },
     });
+    new Swiper('.improvement__slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.improvement__slider-pagination-right',
+            prevEl: '.improvement__slider-pagination-left',
+        },
+        pagination: {
+            el: '.improvement-swiper-dots',
+            clickable: true,
+            bulletClass: 'improvement-pagination-bullet',
+            bulletActiveClass: 'improvement-pagination-bullet-active',
+        },
+        breakpoints: {
+            1024: { slidesPerView: 1 },
+        },
+    });
     new Swiper('.main__filters-right--apartments', {
         slidesPerView: 1,
         spaceBetween: 30,
@@ -75,6 +92,20 @@ const initSliders = () => {
             1024: { slidesPerView: 3 },
             1448: { slidesPerView: 4 },
         },
+    });
+};
+
+const updateImprovementSliderPaginationWidth = () => {
+    document.querySelectorAll('.improvement__slider-pagination-wrapper').forEach((wrapper) => {
+        const imageWrapper = wrapper.closest('.improvement')?.querySelector('.improvement__image-wrapper');
+        const image = imageWrapper?.querySelector('.improvement__image');
+        if (imageWrapper && image) {
+            const wrapperWidth = imageWrapper.offsetWidth;
+            const imageWidth = image.offsetWidth;
+            const newWidth = (wrapperWidth - imageWidth) / 2;
+            console.log(imageWidth, wrapperWidth);
+            wrapper.style.width = `${newWidth}px`;
+        }
     });
 };
 
@@ -645,7 +676,11 @@ const init = () => {
         setYearToCopyRight();
         initNumberInput();
         positionBlocks();
-        window.addEventListener('resize', positionBlocks);
+        updateImprovementSliderPaginationWidth();
+        window.addEventListener('resize', () => {
+            positionBlocks();
+            updateImprovementSliderPaginationWidth();
+        });
         const planImage = document.querySelector('.apartment-plan img');
         if (planImage) {
             planImage.addEventListener('load', positionBlocks);

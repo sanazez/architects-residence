@@ -224,6 +224,9 @@ header {
 }
 section {
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .header__logo {
     display: block;
@@ -852,6 +855,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    -o-object-fit: cover;
     border-radius: 24px;
 }
 
@@ -894,6 +898,8 @@ main {
     position: absolute;
     left: 50% !important;
     transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -987,6 +993,8 @@ main {
     cursor: pointer;
     border-radius: 16px;
     transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
     white-space: nowrap;
     margin: 5px 0;
 }
@@ -1257,6 +1265,7 @@ main {
     width: 100%;
     margin-bottom: 50px;
     object-fit: cover;
+    -o-object-fit: cover;
 }
 
 .property-card__badges {
@@ -1299,6 +1308,9 @@ main {
     color: #090909;
     font-size: 15px;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .property-card__price-row {
     display: flex;
@@ -1319,8 +1331,10 @@ main {
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -2px;
-    -webkit-user-select: none;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     pointer-events: none;
 }
 
@@ -1344,6 +1358,8 @@ main {
     margin-top: 24px;
     cursor: pointer;
     transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
     font-family: 'Montserrat', sans-serif;
     padding: 14px 0;
     width: 100%;
@@ -1367,6 +1383,7 @@ main {
     height: 100%;
     border-radius: 24px;
     object-fit: cover;
+    -o-object-fit: cover;
 }
 
 .main__callback-content {
@@ -1404,6 +1421,8 @@ main {
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
     width: calc((100% - 28px) / 2);
     min-width: 370px;
 }
@@ -1450,6 +1469,9 @@ main {
     color: #090909;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .main__callback-checkbox input[type='checkbox'] {
@@ -1532,6 +1554,7 @@ main {
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
+    -o-object-fit: cover;
 }
 .company__stats {
     display: flex;
@@ -1646,6 +1669,8 @@ main {
     flex-direction: column;
     row-gap: 32px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 .contacts__info-row {
     display: flex;
@@ -1740,6 +1765,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 .footer__menu-col a {
     font-size: 24px;
@@ -2253,6 +2281,9 @@ main {
     margin: 0 12px;
     color: #a1a09a;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .booking-modal__price-row {
     display: flex;
@@ -2326,6 +2357,9 @@ main {
     font-family: 'Montserrat', sans-serif;
     gap: 12px;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .booking-modal__checkbox-input,
@@ -2387,6 +2421,8 @@ main {
     cursor: pointer;
     font-weight: 500;
     transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
 }
 .consultation-modal__submit-btn {
     margin-top: 4px;
@@ -2449,6 +2485,8 @@ main {
     font-weight: 400;
     cursor: pointer;
     transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -2470,6 +2508,9 @@ main {
     gap: 12px;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .consultation-modal__checkbox-label-text {
@@ -2520,6 +2561,7 @@ main {
     width: 100%;
     border-radius: 36px;
     object-fit: cover;
+    -o-object-fit: cover;
     display: block;
     max-height: 694px;
 }
@@ -2533,6 +2575,8 @@ main {
     cursor: pointer;
     font-weight: 500;
     transition: background 0.2s;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
     display: none;
     font-family: 'Montserrat', sans-serif;
 }
@@ -2572,6 +2616,7 @@ main {
     width: 100%;
     max-width: 792px;
     object-fit: cover;
+    -o-object-fit: cover;
     margin-bottom: 40px;
     display: block;
     max-height: 330px;
@@ -2589,6 +2634,7 @@ main {
     width: 225px;
     height: 270px;
     object-fit: cover;
+    -o-object-fit: cover;
     border-radius: 24px;
     position: absolute;
     right: 0;
@@ -2632,6 +2678,7 @@ main {
     width: 54%;
     max-height: 535px;
     object-fit: cover;
+    -o-object-fit: cover;
     display: block;
 }
 .architecture__text,
@@ -2695,6 +2742,7 @@ main {
     width: 84%;
     max-height: 532px;
     object-fit: cover;
+    -o-object-fit: cover;
     display: block;
 }
 .improvement__slider-wrapper {
@@ -2725,6 +2773,9 @@ main {
     align-items: center;
     justify-content: center;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .improvement__slider-pagination-left-wrapper {
     left: -2px;

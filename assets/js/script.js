@@ -95,6 +95,74 @@ const initSliders = () => {
     });
 };
 
+const initCookieBanner = () => {
+    const isCookieAccepted = localStorage.getItem('cookieAccepted');
+
+    if (isCookieAccepted) {
+        return;
+    }
+
+    const cookieBanner = document.createElement('div');
+    cookieBanner.className = 'cookie';
+    cookieBanner.style.display = 'flex';
+
+    cookieBanner.innerHTML = `
+        <p class="cookie__text">
+            Мы обрабатываем cookies, чтобы сделать наш сайт удобнее и персонализированнее для вас.
+            Политика использования <a class="cookie__link" href="cookie.pdf" target="_blank">cookies</a> и
+            <a class="cookie__link" target="_blank" href="data_protection.pdf">защита данных</a>.
+        </p>
+        <button class="cookie__btn">Принять</button>
+    `;
+
+    const mainElement = document.querySelector('main');
+    if (mainElement) {
+        mainElement.appendChild(cookieBanner);
+    } else {
+        document.body.appendChild(cookieBanner);
+    }
+
+    const cookieAcceptButton = cookieBanner.querySelector('.cookie__btn');
+    cookieAcceptButton.addEventListener('click', () => {
+        cookieBanner.style.display = 'none';
+
+        localStorage.setItem('cookieAccepted', 'true');
+    });
+};
+
+const initYandexMap = () => {
+    if (!ymaps) {
+        console.error('Yandex Maps API не загружен');
+        return;
+    }
+
+    ymaps.ready(() => {
+        setTimeout(() => {
+            const map = new ymaps.Map('yandex-map', {
+                center: [55.779585, 37.700165],
+                zoom: 17,
+                controls: ['zoomControl', 'fullscreenControl'],
+            });
+
+            map.geoObjects.add(
+                new ymaps.Rectangle(
+                    [
+                        [55.777899, 37.696814],
+                        [55.780584, 37.702473],
+                    ],
+                    {},
+                    {
+                        stroke: false,
+                        fillImageHref: '/assets/images/map_top.png',
+                    },
+                ),
+            );
+
+            map.geoObjects.add(placemark);
+        }, 50);
+    });
+};
+
 const updateImprovementSliderPaginationWidth = () => {
     document.querySelectorAll('.improvement__slider-pagination-wrapper').forEach((wrapper) => {
         const imageWrapper = wrapper.closest('.improvement')?.querySelector('.improvement__image-wrapper');
@@ -580,7 +648,9 @@ const initPhoneInput = () => {
 };
 
 const setYearToCopyRight = () => {
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    const footerYear = document.querySelector('.footer__year');
+    if (!footerYear) return;
+    footerYear.textContent = new Date().getFullYear();
 };
 
 const initNumberInput = () => {
@@ -677,6 +747,8 @@ const init = () => {
         initNumberInput();
         positionBlocks();
         updateImprovementSliderPaginationWidth();
+        initCookieBanner();
+        initYandexMap();
         window.addEventListener('resize', () => {
             positionBlocks();
             updateImprovementSliderPaginationWidth();

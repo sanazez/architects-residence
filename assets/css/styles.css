@@ -1647,13 +1647,9 @@ main {
 }
 .contacts__map {
     width: 100%;
-    height: auto;
+    height: 775px;
 }
-.contacts__map img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+
 .contacts__info {
     position: absolute;
     top: 0;
@@ -3655,6 +3651,9 @@ main {
         width: 100%;
         max-width: 100%;
     }
+    .contacts__map {
+        height: 600px;
+    }
 }
 @media (max-width: 920px) {
     .booking-modal {
@@ -3861,10 +3860,6 @@ main {
         height: calc(100vw - 20px);
         max-height: 600px;
     }
-    .contacts__map img {
-        height: 100%;
-        width: auto;
-    }
     .footer {
         margin-top: 96px;
     }
@@ -3890,6 +3885,9 @@ main {
     }
     .concept__desc {
         font-size: 12px;
+    }
+    .contacts__map {
+        height: 500px;
     }
 }
 @media (max-width: 723px) {
@@ -4086,6 +4084,11 @@ main {
         max-height: 340px;
     }
 }
+@media (max-width: 596px) {
+    .contacts__map {
+        height: 450px;
+    }
+}
 @media (max-width: 526px) {
     .main__about-swiper-wrapper {
         width: 100%;
@@ -4242,5 +4245,82 @@ main {
     }
     .main__promo-link {
         text-align: center;
+    }
+}
+.cookie {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow:
+        0px 2px 8px rgba(22, 22, 22, 0.08),
+        0px 1px 2px rgba(22, 22, 22, 0.04);
+    background-color: #fff;
+    border-radius: 8px;
+    width: calc(100% - 32px);
+    position: fixed;
+    left: 16px;
+    bottom: 50px;
+    z-index: 1000;
+}
+
+.cookie__text {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cookie__link {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #a31f1a;
+}
+
+.cookie__btn {
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 14px;
+    border: none;
+    background-color: var(--button-primary-default-bg);
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .cookie {
+        flex-direction: row;
+
+        left: initial;
+        right: 50px;
+        max-width: 448px;
+        width: 100%;
+    }
+
+    .cookie__btn {
+        width: fit-content;
     }
 }

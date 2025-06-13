@@ -6,6 +6,7 @@
         <title>Document</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="stylesheet" href="assets/css/styles.css" />
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
         <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -184,6 +185,32 @@
                         строительстве, заключаемых застройщиком. Описание объекта строительства и инфраструктуры,
                         представленное на сайте, является концепцией и носит информационный характер. Технические
                         характеристики объекта строительства и инфраструктуры указаны в проектной документации.
+                    </div>
+                </div>
+            </section>
+            <section class="contacts">
+                <div class="contacts__container">
+                    <div class="contacts__title title">Контакты</div>
+                    <div class="contacts__map-wrapper">
+                        <div class="contacts__info">
+                            <div class="contacts__info-row">
+                                <div class="contacts__info-label">Адрес</div>
+                                <div class="contacts__info-value">Москва, <br />ул. Б. Почтовая, д. 24</div>
+                            </div>
+                            <div class="contacts__info-row">
+                                <div class="contacts__info-label">Телефон</div>
+                                <div class="contacts__info-value">
+                                    <a href="tel:+74951352074" class="contacts__info-link">+7 (495) 135-20-74</a>
+                                </div>
+                            </div>
+                            <div class="contacts__info-row">
+                                <div class="contacts__info-label">Почта</div>
+                                <div class="contacts__info-value">
+                                    <a href="mailto:INFO@AFI.RU" class="contacts__info-link">INFO@AFI.RU</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="yandex-map" class="contacts__map"></div>
                     </div>
                 </div>
             </section>

@@ -157,8 +157,6 @@ const initYandexMap = () => {
                     },
                 ),
             );
-
-            map.geoObjects.add(placemark);
         }, 50);
     });
 };

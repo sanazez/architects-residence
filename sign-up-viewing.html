@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Document</title>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+    <body>
+        <div class="modal__overlay">
+            <div class="viewing-modal">
+                <button class="modal__close" aria-label="Закрыть">&times;</button>
+                <div class="modal__title">Записаться на просмотр</div>
+                <div class="viewing-modal__content">
+                    <div class="viewing-modal__right">
+                        <form class="viewing-modal__form">
+                            <input type="text" class="viewing-modal__input" placeholder="Имя" required />
+                            <input type="tel" class="viewing-modal__input" placeholder="Телефон" required />
+                            <input type="email" class="viewing-modal__input" placeholder="E-mail" required />
+                            <div class="viewing-modal__checkbox-row">
+                                <label class="viewing-modal__checkbox-label">
+                                    <input type="checkbox" required class="viewing-modal__checkbox-input" />
+                                    <span class="viewing-modal__checkbox-custom"></span>
+                                    <span class="viewing-modal__checkbox-text">
+                                        Нажимая на кнопку Отправить, Вы соглашаетесь на обработку
+                                        <a href="#" class="viewing-modal__checkbox-link">персональных данных</a>
+                                    </span>
+                                </label>
+                            </div>
+                            <button type="submit" class="viewing-modal__submit-btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

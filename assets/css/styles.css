@@ -2191,7 +2191,8 @@ main {
     text-decoration: none;
 }
 .booking-modal,
-.consultation-modal {
+.consultation-modal,
+.viewing-modal {
     background: #edece2;
     border-radius: 36px;
     max-width: 1022px;
@@ -2202,6 +2203,9 @@ main {
     display: flex;
     flex-direction: column;
     z-index: 1000;
+}
+.viewing-modal {
+    max-width: 692px;
 }
 .modal__close {
     position: absolute;
@@ -2224,7 +2228,8 @@ main {
     text-transform: uppercase;
 }
 .booking-modal__content,
-.consultation-modal__content {
+.consultation-modal__content,
+.viewing-modal__content {
     display: flex;
     gap: 40px;
 }
@@ -2306,11 +2311,13 @@ main {
 .booking-modal__right {
     flex: 1;
 }
-.consultation-modal__right {
+.consultation-modal__right,
+.viewing-modal__right {
     max-width: 536px;
 }
 .booking-modal__form,
-.consultation-modal__form {
+.consultation-modal__form,
+.viewing-modal__form {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -2318,7 +2325,8 @@ main {
 }
 
 .booking-modal__input,
-.consultation-modal__input {
+.consultation-modal__input,
+.viewing-modal__input {
     height: 48px;
     border: 1px solid #560300;
     border-radius: 32px;
@@ -2331,12 +2339,14 @@ main {
 }
 
 .booking-modal__input::placeholder,
-.consultation-modal__input::placeholder {
+.consultation-modal__input::placeholder,
+.viewing-modal__input::placeholder {
     color: rgba(86, 3, 0, 0.44);
     opacity: 1;
 }
 .booking-modal__checkbox-row,
-.consultation-modal__checkbox-row {
+.consultation-modal__checkbox-row,
+.viewing-modal__checkbox-row {
     margin-top: 20px;
     display: flex;
     align-items: flex-start;
@@ -2344,7 +2354,9 @@ main {
 
 .booking-modal__checkbox-label,
 .consultation-modal__checkbox-label,
-.consultation-modal__checkbox-row {
+.consultation-modal__checkbox-row,
+.viewing-modal__checkbox-row,
+.viewing-modal__checkbox-label {
     display: flex;
     align-items: flex-start;
     cursor: pointer;
@@ -2360,12 +2372,14 @@ main {
 
 .booking-modal__checkbox-input,
 .consultation-modal__checkbox-input,
+.viewing-modal__checkbox-input,
 .consultation-modal__custom-checkbox {
     display: none;
 }
 
 .booking-modal__checkbox-custom,
-.consultation-modal__checkbox-custom {
+.consultation-modal__checkbox-custom,
+.viewing-modal__checkbox-custom {
     width: 20px;
     height: 20px;
     border: 1px solid rgba(47, 46, 46, 0.6);
@@ -2377,7 +2391,8 @@ main {
 }
 
 .booking-modal__checkbox-input:checked + .booking-modal__checkbox-custom::after,
-.consultation-modal__checkbox-input:checked + .consultation-modal__checkbox-custom::after {
+.consultation-modal__checkbox-input:checked + .consultation-modal__checkbox-custom::after,
+.viewing-modal__checkbox-input:checked + .viewing-modal__checkbox-custom::after {
     content: '';
     position: absolute;
     left: 5px;
@@ -2398,13 +2413,15 @@ main {
 }
 
 .booking-modal__checkbox-link,
-.consultation-modal__checkbox-link {
+.consultation-modal__checkbox-link,
+.viewing-modal__checkbox-link {
     color: #2f2e2e;
     text-decoration: underline;
     cursor: pointer;
 }
 .booking-modal__submit-btn,
-.consultation-modal__submit-btn {
+.consultation-modal__submit-btn,
+.viewing-modal__submit-btn {
     margin-top: 76px;
     width: 100%;
     height: 48px;
@@ -2420,10 +2437,12 @@ main {
     -webkit-transition: background 0.2s;
     -moz-transition: background 0.2s;
 }
-.consultation-modal__submit-btn {
+.consultation-modal__submit-btn,
+.viewing-modal__submit-btn {
     margin-top: 4px;
 }
-.consultation-modal__submit-btn:hover {
+.consultation-modal__submit-btn:hover,
+.viewing-modal__submit-btn:hover {
     background: #4b0300;
 }
 .modal__overlay {
@@ -2498,7 +2517,8 @@ main {
     gap: 16px;
 }
 
-.consultation-modal__checkbox-row {
+.consultation-modal__checkbox-row,
+.viewing-modal__checkbox-row {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -3737,11 +3757,13 @@ main {
         font-size: 14px;
         padding: 10px 0;
     }
-    .consultation-modal__content {
+    .consultation-modal__content,
+    .viewing-modal__content {
         flex-direction: column;
         gap: 48px;
     }
-    .consultation-modal {
+    .consultation-modal,
+    .viewing-modal {
         max-width: 370px;
         padding: 40px 24px;
     }
@@ -3751,13 +3773,16 @@ main {
     .consultation-modal--br {
         display: block;
     }
-    .consultation-modal__input {
+    .consultation-modal__input,
+    .viewing-modal__input {
         font-size: 14px;
     }
-    .consultation-modal__checkbox-row {
+    .consultation-modal__checkbox-row,
+    .viewing-modal__checkbox-row {
         margin-top: 4px;
     }
-    .consultation-modal__checkbox-label {
+    .consultation-modal__checkbox-label,
+    .viewing-modal__checkbox-label {
         font-size: 12px;
     }
 }

@@ -161,6 +161,24 @@ const initYandexMap = () => {
     });
 };
 
+const initScrollToSection = () => {
+    const promoButton = document.querySelector('.main__promo-btn'); // Находим кнопку
+    const targetSection = document.querySelector('.main__property'); // Находим целевую секцию
+
+    if (promoButton && targetSection) {
+        promoButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Предотвращаем любое стандартное поведение кнопки (если, например, был submit)
+
+            targetSection.scrollIntoView({
+                behavior: 'smooth', // Плавная прокрутка
+                block: 'start', // Прокрутка к началу секции
+            });
+        });
+    } else {
+        console.error('Не удалось найти кнопку или целевую секцию для прокрутки');
+    }
+};
+
 const updateImprovementSliderPaginationWidth = () => {
     document.querySelectorAll('.improvement__slider-pagination-wrapper').forEach((wrapper) => {
         const imageWrapper = wrapper.closest('.improvement')?.querySelector('.improvement__image-wrapper');
@@ -169,7 +187,6 @@ const updateImprovementSliderPaginationWidth = () => {
             const wrapperWidth = imageWrapper.offsetWidth;
             const imageWidth = image.offsetWidth;
             const newWidth = (wrapperWidth - imageWidth) / 2;
-            console.log(imageWidth, wrapperWidth);
             wrapper.style.width = `${newWidth}px`;
         }
     });
@@ -732,6 +749,125 @@ const positionBlocks = () => {
     contentBlock.style.height = `${totalHeight + 92}px`;
 };
 
+const createThanksModal = () => {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal__overlay';
+
+    modalOverlay.innerHTML = `
+        <div class="thanks-modal__window">
+            <button class="modal__close" aria-label="Закрыть">&times;</button>
+            <div class="modal__title">Спасибо за заявку!</div>
+            <div class="thanks-modal__text">
+                В ближайшее время мы вернемся к вам с деталями. Ожидайте обратной связи.
+            </div>
+            <button class="thanks-modal__btn">
+                <span class="thanks-modal__btn-full">Вернуться на главную страницу</span>
+                <span class="thanks-modal__btn-mobile">На главную</span>
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(modalOverlay);
+
+    const closeButton = modalOverlay.querySelector('.modal__close');
+    closeButton.addEventListener('click', () => {
+        modalOverlay.remove();
+    });
+
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) {
+            modalOverlay.remove();
+        }
+    });
+    const redirectButton = modalOverlay.querySelector('.thanks-modal__btn');
+    redirectButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+        modalOverlay.remove();
+    });
+};
+
+const initSubmitThanksModal = () => {
+    const callbackSubmitButton = document.querySelector('.main__callback-submit-btn'); // Находим кнопку
+
+    if (callbackSubmitButton) {
+        callbackSubmitButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            createThanksModal();
+        });
+    } else {
+        console.warn('Кнопка .main__callback-submit-btn не найдена');
+    }
+};
+
+const createViewingModal = () => {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal__overlay';
+
+    modalOverlay.innerHTML = `
+        <div class="viewing-modal">
+            <button class="modal__close" aria-label="Закрыть">&times;</button>
+            <div class="modal__title">Записаться на просмотр</div>
+            <div class="viewing-modal__content">
+                <form class="viewing-modal__form">
+                    <input type="text" class="viewing-modal__input" placeholder="Имя" required />
+                    <input type="tel" class="viewing-modal__input" placeholder="Телефон" required />
+                    <input type="email" class="viewing-modal__input" placeholder="E-mail" required />
+                    <div class="viewing-modal__checkbox-row">
+                        <label class="viewing-modal__checkbox-label">
+                            <input type="checkbox" required class="viewing-modal__checkbox-input" />
+                            <span class="viewing-modal__checkbox-custom"></span>
+                            <span class="viewing-modal__checkbox-text">
+                                Нажимая на кнопку Отправить, Вы соглашаетесь на обработку
+                                <a href="#" class="viewing-modal__checkbox-link">персональных данных</a>
+                            </span>
+                        </label>
+                    </div>
+                    <button type="submit" class="viewing-modal__submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modalOverlay);
+
+    const closeButton = modalOverlay.querySelector('.modal__close');
+    closeButton.addEventListener('click', () => {
+        modalOverlay.remove();
+    });
+
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) {
+            modalOverlay.remove();
+        }
+    });
+
+    const form = modalOverlay.querySelector('.viewing-modal__form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = form.querySelector('input[type="text"]').value;
+        const phone = form.querySelector('input[type="tel"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+
+        console.log(`Имя: ${name}, Телефон: ${phone}, Email: ${email}`);
+
+        alert('Заявка отправлена! Спасибо.');
+
+        modalOverlay.remove();
+    });
+};
+
+const initViewingModal = () => {
+    const viewingButton = document.querySelector('.footer__btn');
+    if (viewingButton) {
+        viewingButton.addEventListener('click', () => {
+            createViewingModal();
+        });
+    } else {
+        console.warn('Кнопка .footer__btn не найдена.');
+    }
+};
+
 const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
         initSliders();
@@ -747,6 +883,9 @@ const init = () => {
         updateImprovementSliderPaginationWidth();
         initCookieBanner();
         initYandexMap();
+        initScrollToSection();
+        initSubmitThanksModal();
+        initViewingModal();
         window.addEventListener('resize', () => {
             positionBlocks();
             updateImprovementSliderPaginationWidth();

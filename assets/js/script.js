@@ -153,7 +153,7 @@ const initYandexMap = () => {
                     {},
                     {
                         stroke: false,
-                        fillImageHref: '/assets/images/map_top.png',
+                        fillImageHref: 'assets/images/map_top.png',
                     },
                 ),
             );

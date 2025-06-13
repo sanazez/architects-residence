@@ -857,6 +857,113 @@ const createViewingModal = () => {
     });
 };
 
+const createConsultationModal = () => {
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal__overlay';
+
+    modalOverlay.innerHTML = `
+        <div class="consultation-modal">
+            <button class="modal__close" aria-label="Закрыть">&times;</button>
+            <div class="modal__title">Заявка на консультацию</div>
+            <div class="consultation-modal__content">
+                <div class="consultation-modal__left">
+                    <label class="consultation-modal__checkbox-label">
+                        <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                        <span class="consultation-modal__checkbox-custom"></span>
+                        <span class="consultation-modal__checkbox-text">О проекте</span>
+                    </label>
+                    <label class="consultation-modal__checkbox-label">
+                        <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                        <span class="consultation-modal__checkbox-custom"></span>
+                        <span class="consultation-modal__checkbox-text">Условия покупки</span>
+                    </label>
+                    <label class="consultation-modal__checkbox-label">
+                        <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                        <span class="consultation-modal__checkbox-custom"></span>
+                        <span class="consultation-modal__checkbox-text">
+                            Стоимость, планировочное<br class="consultation-modal--br" />
+                            решение
+                        </span>
+                    </label>
+                    <label class="consultation-modal__checkbox-label">
+                        <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                        <span class="consultation-modal__checkbox-custom"></span>
+                        <span class="consultation-modal__checkbox-text">
+                            Специальные<br class="consultation-modal--br" />
+                            предложения и лоты
+                        </span>
+                    </label>
+                    <label class="consultation-modal__checkbox-label">
+                        <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                        <span class="consultation-modal__checkbox-custom"></span>
+                        <span class="consultation-modal__checkbox-text">Другое</span>
+                    </label>
+                </div>
+
+                <div class="consultation-modal__right">
+                    <form class="consultation-modal__form">
+                        <input type="text" class="consultation-modal__input" placeholder="Имя" required />
+                        <input type="tel" class="consultation-modal__input" placeholder="Телефон" required />
+                        <input type="email" class="consultation-modal__input" placeholder="E-mail" required />
+                        <div class="consultation-modal__checkbox-row">
+                            <label class="consultation-modal__checkbox-label">
+                                <input type="checkbox" required class="consultation-modal__checkbox-input" />
+                                <span class="consultation-modal__checkbox-custom"></span>
+                                <span class="consultation-modal__checkbox-text">
+                                    Нажимая на кнопку Отправить, Вы соглашаетесь на обработку
+                                    <a href="#" class="consultation-modal__checkbox-link">персональных данных</a>
+                                </span>
+                            </label>
+                        </div>
+                        <button type="submit" class="consultation-modal__submit-btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modalOverlay);
+
+    const closeButton = modalOverlay.querySelector('.modal__close');
+    closeButton.addEventListener('click', () => {
+        modalOverlay.remove();
+    });
+
+    modalOverlay.addEventListener('click', (event) => {
+        if (event.target === modalOverlay) {
+            modalOverlay.remove();
+        }
+    });
+
+    const form = modalOverlay.querySelector('.consultation-modal__form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = form.querySelector('input[placeholder="Имя"]').value;
+        const phone = form.querySelector('input[placeholder="Телефон"]').value;
+        const email = form.querySelector('input[placeholder="E-mail"]').value;
+
+        console.log('Данные: ', {
+            name,
+            phone,
+            email,
+        });
+
+        modalOverlay.remove();
+    });
+};
+
+const initConsultationModal = () => {
+    const consultationButton = document.querySelector('.main__profit-calc-btn'); // Найти кнопку открытия модалки
+    if (consultationButton) {
+        consultationButton.addEventListener('click', () => {
+            createConsultationModal();
+        });
+    } else {
+        console.warn('Кнопка .main__profit-calc-btn не найдена.');
+    }
+};
+
 const initViewingModal = () => {
     const viewingButton = document.querySelector('.footer__btn');
     if (viewingButton) {
@@ -886,6 +993,7 @@ const init = () => {
         initScrollToSection();
         initSubmitThanksModal();
         initViewingModal();
+        initConsultationModal();
         window.addEventListener('resize', () => {
             positionBlocks();
             updateImprovementSliderPaginationWidth();

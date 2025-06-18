@@ -14,3 +14,4 @@
 | Заявка на консультацию | https://sanazez.github.io/architects-residence/consultation-request.html |
 | Контакты               | https://sanazez.github.io/architects-residence/contacts.html             |
 | О проекте              | https://sanazez.github.io/architects-residence/about.html                |
+| Галерея                | https://sanazez.github.io/architects-residence/gallery.html              |

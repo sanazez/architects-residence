@@ -185,9 +185,16 @@ const initYandexMap = () => {
             const map = new ymaps.Map('yandex-map', {
                 center: [55.779585, 37.700165],
                 zoom: 17,
-                controls: ['zoomControl', 'fullscreenControl'],
+                controls: [],
             });
-
+            map.options.set('copyrightLogoVisible', false);
+            map.controls.remove('geolocationControl');
+            map.controls.remove('searchControl');
+            map.controls.remove('trafficControl');
+            map.controls.remove('typeSelector');
+            map.controls.remove('fullscreenControl');
+            map.controls.remove('zoomControl');
+            map.controls.remove('rulerControl');
             map.geoObjects.add(
                 new ymaps.Rectangle(
                     [
@@ -1019,6 +1026,19 @@ const initViewingModal = () => {
     }
 };
 
+const initCheckboxLinksStopPropagation = () => {
+    document
+        .querySelectorAll(
+            '.main__callback-checkbox-link, .viewing-modal__checkbox-link, .consultation-modal__checkbox-link',
+        )
+        .forEach((link) => {
+            link.addEventListener('click', (e) => {
+                console.log(111);
+                e.stopPropagation();
+            });
+        });
+};
+
 const init = () => {
     document.addEventListener('DOMContentLoaded', () => {
         initSliders();
@@ -1038,6 +1058,7 @@ const init = () => {
         initSubmitThanksModal();
         initViewingModal();
         initConsultationModal();
+        initCheckboxLinksStopPropagation();
         window.addEventListener('resize', () => {
             positionBlocks();
             updateImprovementSliderPaginationWidth();

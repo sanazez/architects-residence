@@ -61,6 +61,50 @@ const initSliders = () => {
             1024: { slidesPerView: 2 },
         },
     });
+    new Swiper('.gallery-top-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.gallery-top-pagination-dots',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+        },
+        breakpoints: {
+            650: { slidesPerView: 2 },
+            1119: { slidesPerView: 3 },
+        },
+    });
+    new Swiper('.gallery-bottom-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.gallery-bottom-pagination-dots',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+        },
+        breakpoints: {
+            650: { slidesPerView: 2 },
+            1119: { slidesPerView: 3 },
+        },
+    });
+    new Swiper('.gallery-middle-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.gallery-middle-pagination-dots',
+            clickable: true,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active',
+        },
+        breakpoints: {
+            1119: { slidesPerView: 2 },
+        },
+    });
     new Swiper('.improvement__slider', {
         slidesPerView: 1,
         spaceBetween: 30,

@@ -1306,6 +1306,27 @@ main {
 .property-card {
     border-radius: 16px;
     width: calc((100% - 48px) / 3);
+    background-color: #F7F6EE;
+    padding: 16px;
+}
+
+#map-river path:not(#building14):not(#building15) {
+    pointer-events: none;
+}
+
+#building14, #building15 {
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    z-index: 10000;
+    pointer-events: all;
+}
+
+#building14:hover, #building15:hover {
+    fill: #560300;
+}
+
+#building14.selected, #building15.selected {
+    fill: #560300 !important;
 }
 
 .property-card__title {
@@ -1800,6 +1821,7 @@ main {
     align-items: center;
     justify-content: flex-start;
     gap: 85px;
+    flex-wrap: wrap;
 }
 .footer__office {
     min-width: 320px;
@@ -2973,9 +2995,6 @@ main {
         width: 370px;
         padding: 24px;
     }
-    .footer__row--middle {
-        flex-wrap: wrap;
-    }
     .apartment-details__plan-block {
         max-width: 700px;
         flex-grow: 0;
@@ -3020,9 +3039,6 @@ main {
 @media (max-width: 1466px) {
     .footer__menu {
         order: 1;
-    }
-    .footer__office {
-        order: 2;
     }
     .property-card {
         border-radius: 16px;
@@ -3801,6 +3817,11 @@ main {
     }
     .main__promo-info-item {
         height: 86%;
+    }
+}
+@media (max-width: 909px) {
+    .footer__office {
+        order: 2;
     }
 }
 @media (max-width: 860px) {

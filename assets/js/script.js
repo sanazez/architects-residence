@@ -1048,66 +1048,68 @@ const initHandleClickRiverMap = () => {
     const number1_15 = document.getElementById('number_1_15');
     const number5_15 = document.getElementById('number_5_15');
 
-    const handleMouseOverBuilding14 = () => {
-        if (!building14.classList.contains('selected')) {
-            number1_14.setAttribute('fill', 'white');
-            number4_14.setAttribute('fill', 'white');
-        }
-    };
+    if (building14 && building15 && number1_14 && number4_14 && number1_15 && number5_15) {
+        const handleMouseOverBuilding14 = () => {
+            if (!building14.classList.contains('selected')) {
+                number1_14.setAttribute('fill', 'white');
+                number4_14.setAttribute('fill', 'white');
+            }
+        };
 
-    const handleMouseOutBuilding14 = () => {
-        if (!building14.classList.contains('selected')) {
-            number1_14.setAttribute('fill', 'black');
-            number4_14.setAttribute('fill', 'black');
-        }
-    };
+        const handleMouseOutBuilding14 = () => {
+            if (!building14.classList.contains('selected')) {
+                number1_14.setAttribute('fill', 'black');
+                number4_14.setAttribute('fill', 'black');
+            }
+        };
 
-    const handleMouseOverBuilding15 = () => {
-        if (!building15.classList.contains('selected')) {
-            number1_15.setAttribute('fill', 'white');
-            number5_15.setAttribute('fill', 'white');
-        }
-    };
+        const handleMouseOverBuilding15 = () => {
+            if (!building15.classList.contains('selected')) {
+                number1_15.setAttribute('fill', 'white');
+                number5_15.setAttribute('fill', 'white');
+            }
+        };
 
-    const handleMouseOutBuilding15 = () => {
-        if (!building15.classList.contains('selected')) {
-            number1_15.setAttribute('fill', 'black');
-            number5_15.setAttribute('fill', 'black');
-        }
-    };
-    building14.addEventListener('mouseover', handleMouseOverBuilding14);
-    building14.addEventListener('mouseout', handleMouseOutBuilding14);
-    building15.addEventListener('mouseover', handleMouseOverBuilding15);
-    building15.addEventListener('mouseout', handleMouseOutBuilding15);
-
-    building14.addEventListener('click', () => {
-        building14.removeEventListener('mouseover', handleMouseOverBuilding14);
-        building14.removeEventListener('mouseout', handleMouseOutBuilding14);
-        number1_14.setAttribute('fill', 'white');
-        number4_14.setAttribute('fill', 'white');
-
-        building15.addEventListener('mouseover', handleMouseOverBuilding15);
-        building15.addEventListener('mouseout', handleMouseOutBuilding15);
-        number1_15.setAttribute('fill', 'black');
-        number5_15.setAttribute('fill', 'black');
-
-        building14.classList.add('selected');
-        building15.classList.remove('selected');
-    });
-    building15.addEventListener('click', () => {
+        const handleMouseOutBuilding15 = () => {
+            if (!building15.classList.contains('selected')) {
+                number1_15.setAttribute('fill', 'black');
+                number5_15.setAttribute('fill', 'black');
+            }
+        };
         building14.addEventListener('mouseover', handleMouseOverBuilding14);
         building14.addEventListener('mouseout', handleMouseOutBuilding14);
-        number1_14.setAttribute('fill', 'black');
-        number4_14.setAttribute('fill', 'black');
+        building15.addEventListener('mouseover', handleMouseOverBuilding15);
+        building15.addEventListener('mouseout', handleMouseOutBuilding15);
 
-        building15.removeEventListener('mouseover', handleMouseOverBuilding15);
-        building15.removeEventListener('mouseout', handleMouseOutBuilding15);
-        number1_15.setAttribute('fill', 'white');
-        number5_15.setAttribute('fill', 'white');
+        building14.addEventListener('click', () => {
+            building14.removeEventListener('mouseover', handleMouseOverBuilding14);
+            building14.removeEventListener('mouseout', handleMouseOutBuilding14);
+            number1_14.setAttribute('fill', 'white');
+            number4_14.setAttribute('fill', 'white');
 
-        building14.classList.remove('selected');
-        building15.classList.add('selected');
-    });
+            building15.addEventListener('mouseover', handleMouseOverBuilding15);
+            building15.addEventListener('mouseout', handleMouseOutBuilding15);
+            number1_15.setAttribute('fill', 'black');
+            number5_15.setAttribute('fill', 'black');
+
+            building14.classList.add('selected');
+            building15.classList.remove('selected');
+        });
+        building15.addEventListener('click', () => {
+            building14.addEventListener('mouseover', handleMouseOverBuilding14);
+            building14.addEventListener('mouseout', handleMouseOutBuilding14);
+            number1_14.setAttribute('fill', 'black');
+            number4_14.setAttribute('fill', 'black');
+
+            building15.removeEventListener('mouseover', handleMouseOverBuilding15);
+            building15.removeEventListener('mouseout', handleMouseOutBuilding15);
+            number1_15.setAttribute('fill', 'white');
+            number5_15.setAttribute('fill', 'white');
+
+            building14.classList.remove('selected');
+            building15.classList.add('selected');
+        });
+    }
 };
 
 const init = () => {
